@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/go:1": {}
+	},
+	// make npm faster https://code.visualstudio.com/remote/advancedcontainers/improve-performance#_use-a-targeted-named-volume
+	"remoteUser": "node",
+	"mounts": [
+		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/src/web/node_modules,type=volume"
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "cd src/web && sudo chown node node_modules && npm install",
+	"postStartCommand": "cd src/web && npm run start",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		3000
+	],
+	// Configure tool-specific properties.
+	// "customizations": {},
+}
