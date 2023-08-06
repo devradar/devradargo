@@ -1,20 +1,20 @@
-import { Blip } from '@/types/domain'
+import { Blip, BlipChange } from '@/types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 
 export interface SkillradarOptions {
-  levelCount?: number;
-  radius?: number;
-  elementCount?: number;
-  blipRadius?: number;
-  blipRadiusHoverPercentage?: number;
-  opacityArea?: number;
-  transitionDurationMs?: number;
-  titleCutOff?: number;
-  legendCategorySpacingEms?: number;
-  legendCategoryOffsetEms?: number;
-  dark?: boolean;
-  tooltipWidth?: number;
+  levelCount: number;
+  radius: number;
+  elementCount: number;
+  blipRadius: number;
+  blipRadiusHoverPercentage: number;
+  opacityArea: number;
+  transitionDurationMs: number;
+  titleCutOff: number;
+  legendCategorySpacingEms: number;
+  legendCategoryOffsetEms: number;
+  dark: boolean;
+  tooltipWidth: number;
 }
 
 export interface SkillradarData {
@@ -38,12 +38,12 @@ export interface BlipExtended extends Blip {
 }
 
 // wrap (existing) text within a svg <text> element by adding <tspan> attributes once maxLength is reached
-function textWrap(textElm, maxLength: number) {
+function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
   textElm.each(function () {
     const elm = d3.select(this)
     const rootX = elm.attr('x')
     const rootY = elm.attr('y')
-    const words = elm.text().split(/\s+/).reverse()
+    const words = (elm.text() || "").split(/\s+/).reverse()
     const lineHeight = 1.1
     elm
       .append('tspan')
@@ -51,13 +51,13 @@ function textWrap(textElm, maxLength: number) {
       .attr('y', rootY)
     let line: Array<string> = []
     let lineNumber = 0
-    let tspan = elm.text(null)
+    let tspan = elm.append('tspan') as d3.Selection<SVGTSpanElement, unknown, HTMLElement, any>
     let word = words.pop()
     while (word) {
       line.push(word)
       tspan.text(line.join(' '))
-      if (tspan.node().getComputedTextLength() > maxLength) {
-        const lastWord = line.pop() // remove last element from line
+      if ((tspan?.node() as SVGTSpanElement).getComputedTextLength() > maxLength) {
+        const lastWord = line.pop() as string // remove last element from line
         tspan.text(line.join(' '))
         line = [lastWord]
         tspan = textElm.append('tspan')
@@ -72,11 +72,10 @@ function textWrap(textElm, maxLength: number) {
 export class SkillradarChart {
   public config: SkillradarOptions
 
-  private chartArea: d3.Selection<SVGGElement, unknown, HTMLElement, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
-  private legends: d3.Selection<SVGGElement, unknown, HTMLElement, any>[] = []; // eslint-disable-line @typescript-eslint/no-explicit-any
-
   public constructor(options: SkillradarOptions) {
-    const cfg: SkillradarOptions = {
+    this.config = {
+      levelCount: 0,
+      elementCount: 0,
       radius: 300,
       opacityArea: 0.5,
       transitionDurationMs: 500,
@@ -91,12 +90,12 @@ export class SkillradarChart {
 
     if (options) {
       for (const i in options) {
-        if (options[i]) {
-          cfg[i] = options[i]
+        const key: keyof SkillradarOptions = i as keyof SkillradarOptions
+        if (options[key]) {
+          (this.config as any)[key] = options[key]
         }
       }
     }
-    this.config = cfg
   }
 
   public drawChart(id: string, data: SkillradarData): void {
@@ -110,14 +109,13 @@ export class SkillradarChart {
     const g = d3.select(id)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', `-5 -5 ${2 * cfg.radius + 10} ${2 * cfg.radius + 10}`)
+      .attr('viewBox', `-5 -5 ${2 * cfg.radius! + 10} ${2 * cfg.radius! + 10}`)
       .attr('class', `radar-chart ${darkClass}`)
       .style('overflow', 'visible')
       .append('g')
       .attr('transform', 'translate(' + (cfg.radius) + ',' + (cfg.radius) + ')')
-    this.chartArea = g
     // drawn at the end to be placed on top
-    let tooltip // eslint-disable-line prefer-const
+    let tooltip: d3.Selection<SVGGElement, unknown, HTMLElement, any> // eslint-disable-line prefer-const
     let isOverTooltip = false
     let isOverBlip = false
     // #############
@@ -153,7 +151,7 @@ export class SkillradarChart {
       .attr('href', (d: BlipExtended) => d.detailsUrl || '')
       .append('g')
       .attr('class', `blip ${darkClass}`)
-      .attr('data-index', (d: BlipExtended) => d.index)
+      .attr('data-index', (d: BlipExtended) => d.index || -1)
       .attr('transform', (d: BlipExtended) => 'translate(' + this.rad2xy(this.blip2rad(d)).x + ',' + this.rad2xy(this.blip2rad(d)).y + ')')
       .on('mouseover', function () {
         isOverBlip = true
@@ -173,7 +171,8 @@ export class SkillradarChart {
 
         const sortedChanges = blip.changes
           .sort((a, b) => a.date < b.date ? 1 : -1)
-        const newLevel = sortedChanges[0].newLevel
+        const lastChange = sortedChanges[0] as BlipChange
+        const newLevel = lastChange.newLevel
         let prevLevel = null
         if (sortedChanges.length > 1) {
           prevLevel = sortedChanges[1].newLevel
@@ -183,14 +182,14 @@ export class SkillradarChart {
           .text(`${prevLevel !== null ? data.levels[prevLevel] + ' —' : '🔰'} ${data.levels[newLevel]}`)
         tooltip
           .select('.tooltipText')
-          .text(sortedChanges[0].text.replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, '$1'))
+          .text(lastChange.text.replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, '$1'))
           .call(textWrap, cfg.tooltipWidth * 0.9)
         tooltip
           .select('.tooltipDate')
-          .text(sortedChanges[0].date)
+          .text(lastChange.date)
         tooltip
           .select('.tooltipRectangle')
-          .attr('height', tooltip.select('.tooltipText').node().getBoundingClientRect().height + 60)
+          .attr('height', (tooltip.select('.tooltipText')?.node() as d3.BaseType)?.getBoundingClientRect().height + 60)
         tooltip
           .transition().duration(cfg.transitionDurationMs)
           .attr('visibility', 'visible')
@@ -241,7 +240,7 @@ export class SkillradarChart {
       .attr('class', `blipIndex ${darkClass}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '0.3em')
-      .text((d: BlipExtended) => d.index + 1)
+      .text((d: BlipExtended) => (d.index || -1) + 1)
 
     // ###################
     // ###   Tooltip   ###
@@ -336,7 +335,6 @@ export class SkillradarChart {
       .attr('viewBox', `0 0 ${0.9 * cfg.radius} ${maxLegendHeight}`)
       .append('g')
       .attr('class', `radar-legend ${darkClass}`)
-    this.legends[id] = g
 
     // ####################
     // ### Legend Group ###

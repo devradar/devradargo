@@ -1,8 +1,8 @@
 export interface BlipChange {
   date: string;
   newLevel: number;
-  text?: string;
-  id?: string;
+  text: string;
+  id: string;
 }
 
 export interface Blip {
@@ -11,9 +11,9 @@ export interface Blip {
   changes: BlipChange[];
   link: string;
   id: string;
-  description?: string;
-  level?: number;
-  index?: number;
+  description: string;
+  level: number;
+  index: number;
 }
 
 export interface Meta {
