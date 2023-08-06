@@ -5,16 +5,15 @@ import { getPseudoRand } from '../util'
 export interface SkillradarOptions {
   levelCount: number;
   radius: number;
-  elementCount: number;
-  blipRadius: number;
-  blipRadiusHoverPercentage: number;
-  opacityArea: number;
-  transitionDurationMs: number;
-  titleCutOff: number;
-  legendCategorySpacingEms: number;
-  legendCategoryOffsetEms: number;
   dark: boolean;
-  tooltipWidth: number;
+  blipRadius?: number;
+  blipRadiusHoverPercentage?: number;
+  opacityArea?: number;
+  transitionDurationMs?: number;
+  titleCutOff?: number;
+  legendCategorySpacingEms?: number;
+  legendCategoryOffsetEms?: number;
+  tooltipWidth?: number;
 }
 
 export interface SkillradarData {
@@ -75,7 +74,6 @@ export class SkillradarChart {
   public constructor(options: SkillradarOptions) {
     this.config = {
       levelCount: 0,
-      elementCount: 0,
       radius: 300,
       opacityArea: 0.5,
       transitionDurationMs: 500,
@@ -100,7 +98,6 @@ export class SkillradarChart {
 
   public drawChart(id: string, data: SkillradarData): void {
     const cfg = this.config
-    cfg.elementCount = data.items.length
     cfg.levelCount = data.levels.length
 
     const darkClass = cfg.dark ? 'dark' : ''
@@ -157,10 +154,10 @@ export class SkillradarChart {
         isOverBlip = true
         const blip = d3.select(this).data()[0] as BlipExtended
         d3.select(this).select('.blipCircle')
-          .transition().duration(cfg.transitionDurationMs)
-          .attr('r', cfg.blipRadius * cfg.blipRadiusHoverPercentage)
+          .transition().duration(cfg.transitionDurationMs!)
+          .attr('r', cfg.blipRadius! * cfg.blipRadiusHoverPercentage!)
         d3.select(this).select('.blipIndex')
-          .transition().duration(cfg.transitionDurationMs)
+          .transition().duration(cfg.transitionDurationMs!)
           .attr('opacity', 0)
 
         tooltip
@@ -183,7 +180,7 @@ export class SkillradarChart {
         tooltip
           .select('.tooltipText')
           .text(lastChange.text.replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, '$1'))
-          .call(textWrap as any, cfg.tooltipWidth * 0.9)
+          .call(textWrap as any, cfg.tooltipWidth! * 0.9)
         tooltip
           .select('.tooltipDate')
           .text(lastChange.date)
@@ -191,7 +188,7 @@ export class SkillradarChart {
           .select('.tooltipRectangle')
           .attr('height', (tooltip.select('.tooltipText')?.node() as SVGTextElement).getBoundingClientRect().height + 60)
         tooltip
-          .transition().duration(cfg.transitionDurationMs)
+          .transition().duration(cfg.transitionDurationMs!)
           .attr('visibility', 'visible')
           .attr('opacity', 1)
 
@@ -212,13 +209,13 @@ export class SkillradarChart {
       }
       // Bring back all blobs
       d3.selectAll('.blipCircle')
-        .transition().duration(cfg.transitionDurationMs)
-        .attr('r', cfg.blipRadius)
+        .transition().duration(cfg.transitionDurationMs!)
+        .attr('r', cfg.blipRadius!)
       d3.selectAll('.blipIndex')
-        .transition().duration(cfg.transitionDurationMs)
+        .transition().duration(cfg.transitionDurationMs!)
         .attr('opacity', 1)
       tooltip
-        .transition().duration(cfg.transitionDurationMs)
+        .transition().duration(cfg.transitionDurationMs!)
         .attr('opacity', 0)
         .attr('visibility', 'hidden')
 
@@ -254,8 +251,8 @@ export class SkillradarChart {
     tooltip
       .append('rect')
       .attr('class', `tooltipRectangle ${darkClass}`)
-      .attr('height', cfg.tooltipWidth)
-      .attr('width', cfg.tooltipWidth)
+      .attr('height', cfg.tooltipWidth!)
+      .attr('width', cfg.tooltipWidth!)
       .attr('anchor', 'start')
 
     tooltip
@@ -264,28 +261,28 @@ export class SkillradarChart {
       .attr('text-anchor', 'start')
       .attr('y', 20)
       .attr('x', 14)
-      .attr('width', cfg.tooltipWidth * 0.9)
+      .attr('width', cfg.tooltipWidth! * 0.9)
     tooltip
       .append('text')
       .attr('class', `tooltipDate ${darkClass}`)
       .attr('text-anchor', 'start')
       .attr('y', 42)
       .attr('x', 14)
-      .attr('width', cfg.tooltipWidth * 0.6)
+      .attr('width', cfg.tooltipWidth! * 0.6)
     tooltip
       .append('text')
       .attr('class', `tooltipLevel ${darkClass}`)
       .attr('text-anchor', 'end')
       .attr('y', 42)
-      .attr('x', cfg.tooltipWidth - 20)
-      .attr('width', cfg.tooltipWidth * 0.4)
+      .attr('x', cfg.tooltipWidth! - 20)
+      .attr('width', cfg.tooltipWidth! * 0.4)
     tooltip
       .append('text')
       .attr('class', `tooltipText ${darkClass}`)
       .attr('text-anchor', 'start')
       .attr('y', 70)
       .attr('x', 14)
-      .attr('width', cfg.tooltipWidth * 0.8)
+      .attr('width', cfg.tooltipWidth! * 0.8)
     tooltip.on('mouseover', function () {
       isOverTooltip = true
     }).on('mouseout', function () {
@@ -322,7 +319,7 @@ export class SkillradarChart {
 
     // can not move <g> by em units so move individual elements
     const legendYoffset = (categoryNumber: number, entryNumber: number) => {
-      return (entryNumber * 2 + categoryNumber * cfg.legendCategorySpacingEms + cfg.legendCategoryOffsetEms) * legendTitleCharHeight
+      return (entryNumber * 2 + categoryNumber * cfg.legendCategorySpacingEms! + cfg.legendCategoryOffsetEms!) * legendTitleCharHeight
     }
 
     const maxLegendHeight = legendYoffset(2, blips.length)
@@ -351,10 +348,10 @@ export class SkillradarChart {
         const { index } = d3.select(this).data()[0] as BlipExtended
         const blip = d3.selectAll('.blip').filter(`[data-index='${index}']`)
         blip.select('.blipCircle')
-          .transition().duration(cfg.transitionDurationMs)
-          .attr('r', cfg.blipRadius * cfg.blipRadiusHoverPercentage)
+          .transition().duration(cfg.transitionDurationMs!)
+          .attr('r', cfg.blipRadius! * cfg.blipRadiusHoverPercentage!)
         blip.select('.blipIndex')
-          .transition().duration(cfg.transitionDurationMs)
+          .transition().duration(cfg.transitionDurationMs!)
           .attr('opacity', 0)
 
         d3.selectAll('.legendEntry')
@@ -365,10 +362,10 @@ export class SkillradarChart {
       })
       .on('mouseout', function () {
         d3.selectAll('.blipCircle')
-          .transition().duration(cfg.transitionDurationMs)
-          .attr('r', cfg.blipRadius)
+          .transition().duration(cfg.transitionDurationMs!)
+          .attr('r', cfg.blipRadius!)
         d3.selectAll('.blipIndex')
-          .transition().duration(cfg.transitionDurationMs)
+          .transition().duration(cfg.transitionDurationMs!)
           .attr('opacity', 1)
         d3.selectAll('.legendEntry')
           .classed('highlight', false)
@@ -383,7 +380,7 @@ export class SkillradarChart {
         const categoryNumber = categoriesDistinct.indexOf(category)
         const y = legendYoffset(categoryNumber, i + 1) + 2
         const x0 = 1 * legendTitleCharWidth
-        const x1 = cfg.titleCutOff * legendTitleCharWidth + 2 * legendTitleCharHeight + (levelMaxLength + 2) * legendTitleCharWidth + cfg.legendCategoryOffsetEms * legendTitleCharHeight
+        const x1 = cfg.titleCutOff! * legendTitleCharWidth + 2 * legendTitleCharHeight + (levelMaxLength + 2) * legendTitleCharWidth + cfg.legendCategoryOffsetEms! * legendTitleCharHeight
         return `${x0 - 3},${y - 3} ${x0},${y} ${x1},${y} ${x1 + 3},${y + 3}`
       })
 
@@ -397,7 +394,7 @@ export class SkillradarChart {
         return legendYoffset(categoryNumber, i + 1)
       })
       .attr('x', 2 * legendTitleCharHeight)
-      .text((d: BlipExtended) => this.limitString(d.title, cfg.titleCutOff))
+      .text((d: BlipExtended) => this.limitString(d.title, cfg.titleCutOff!))
 
     legendWrapper
       .append('text')
@@ -420,7 +417,7 @@ export class SkillradarChart {
         const categoryNumber = categoriesDistinct.indexOf(category)
         return legendYoffset(categoryNumber, i + 1)
       })
-      .attr('x', (cfg.titleCutOff + levelMaxLength + 9) * legendTitleCharWidth) // no clue how to get rid of the magic 8; TODO: come up with a better way for calculating text width/height than magic numbers
+      .attr('x', (cfg.titleCutOff! + levelMaxLength + 9) * legendTitleCharWidth) // no clue how to get rid of the magic 8; TODO: come up with a better way for calculating text width/height than magic numbers
       .text((d: BlipExtended) => data.levels[d.level])
 
     g.selectAll('.legendCategory')
