@@ -51,7 +51,7 @@ function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, an
       .attr('y', rootY)
     let line: Array<string> = []
     let lineNumber = 0
-    let tspan = elm.append('tspan') as d3.Selection<SVGTSpanElement, unknown, HTMLElement, any>
+    let tspan = elm.append('tspan') as any
     let word = words.pop()
     while (word) {
       line.push(word)
@@ -183,13 +183,13 @@ export class SkillradarChart {
         tooltip
           .select('.tooltipText')
           .text(lastChange.text.replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, '$1'))
-          .call(textWrap, cfg.tooltipWidth * 0.9)
+          .call(textWrap as any, cfg.tooltipWidth * 0.9)
         tooltip
           .select('.tooltipDate')
           .text(lastChange.date)
         tooltip
           .select('.tooltipRectangle')
-          .attr('height', (tooltip.select('.tooltipText')?.node() as d3.BaseType)?.getBoundingClientRect().height + 60)
+          .attr('height', (tooltip.select('.tooltipText')?.node() as SVGTextElement).getBoundingClientRect().height + 60)
         tooltip
           .transition().duration(cfg.transitionDurationMs)
           .attr('visibility', 'visible')
