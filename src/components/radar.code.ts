@@ -100,7 +100,7 @@ export class SkillradarChart {
     const cfg = this.config
     cfg.levelCount = data.levels.length
 
-    const darkClass = cfg.dark ? 'dark' : ''
+    const darkClass = cfg.dark ? ' dark' : ''
     // create a reference object with radar center being 0,0
     d3.select(id).select('svg').remove()
     const g = d3.select(id)
@@ -125,7 +125,7 @@ export class SkillradarChart {
       .data(d3.range(0, cfg.levelCount))
       .enter()
       .append('circle')
-      .attr('class', `gridCircle ${darkClass}`)
+      .attr('class', `gridCircle${darkClass}`)
       .attr('r', (d: number) => this.level2radius(d))
 
     // circle label

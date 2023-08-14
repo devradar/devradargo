@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { SkillradarChart, SkillradarOptions, SkillradarData } from './radar.code'
+import './radar.scss'
 
 const radarConfig: SkillradarOptions = {
   levelCount: 4,
@@ -14,8 +16,11 @@ const data: SkillradarData = {
 
 function Radar() {
 
-  const chart = new SkillradarChart(radarConfig)
-  // chart.drawChart('#radarchart', data)
+
+  useEffect(() => {
+    const chart = new SkillradarChart(radarConfig)
+    chart.drawChart('#radarchart', data)
+  })
   return (
     <div id="radar" className="radarcontainer">
       📡
