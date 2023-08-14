@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './app.scss';
+import './main.scss';
 import { RouterProvider } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import { router } from './router'

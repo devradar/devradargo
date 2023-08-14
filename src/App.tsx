@@ -1,8 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import logo from './logo.svg';
+import './App.scss'
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link><Link to={`/`}>Home</Link></Nav.Link>
-              <Nav.Link><Link to={`radar`}>Radar</Link></Nav.Link>
+              <NavLink to={`/`} className="nav-link" role="button">Home</NavLink>
+              <NavLink to={`radar`} className="nav-link" role="button">Radar</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
