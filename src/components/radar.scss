@@ -1,0 +1,167 @@
+#radarchart {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#legendeast {
+  padding: 0 0 0 2rem;
+}
+
+#legendwest {
+  padding: 0 2rem 0 0;
+}
+
+.radarcontainer {
+  margin: 0;
+  text-align: center;
+}
+
+.radarlegend {
+  min-width: 100%;
+}
+
+.z-6 {
+  z-index: 6;
+}
+
+.radar-chart {
+  .tooltip {
+    font-size: 20px;
+    fill: #444;
+
+    .tooltipTitle {
+      font-size: 16px;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    .tooltipDate {
+      font-size: 12px;
+    }
+
+    .tooltipLevel {
+      font-size: 12px;
+    }
+
+    .tooltipText {
+      font-size: 10px;
+      cursor: default;
+    }
+
+    .tooltipRectangle {
+      fill: #eee;
+
+      &.dark {
+        fill: #333;
+      }
+    }
+  }
+
+  .blip {
+    .blipCircle {
+      stroke: #fff;
+    }
+
+    .blipCircle-category-0 {
+      fill: #0DBD0D;
+    }
+
+    .blipCircle-category-1 {
+      fill: #ff7700;
+    }
+
+    .blipCircle-category-2 {
+      fill: #11aadd;
+    }
+
+    .blipCircle-category-3 {
+      fill: #cc0033;
+    }
+
+    .blipIndex {
+      fill: #fff;
+      font-size: 16px;
+    }
+  }
+
+  .gridWrapper {
+    .gridLabel {
+      font-size: 24px;
+      width: 30px;
+      fill: #fff;
+      cursor: default;
+    }
+
+    .gridCircle {
+      fill: #444;
+      fill-opacity: 1;
+      stroke: #fafafa;
+      stroke-width: 3;
+    }
+  }
+}
+
+.radar-legend {
+  cursor: default;
+
+  .category-0 {
+    fill: #0DBD0D;
+  }
+
+  .category-1 {
+    fill: #ff7700;
+  }
+
+  .category-2 {
+    fill: #11aadd;
+  }
+
+  .category-3 {
+    fill: #cc0033;
+  }
+
+  .legendCircle {
+    fill: none;
+  }
+
+  .highlight {
+    font-weight: bolder;
+  }
+
+  .grayed {
+    fill: #888;
+    transition: fill 500ms;
+  }
+
+  .legendEntry {
+    font-size: 20px;
+    transition: fill 500ms;
+  }
+
+  .legendCategory {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .legendDecorator {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1px;
+    stroke-dasharray: 1.5;
+
+    &.dark {
+      stroke: #ddd;
+    }
+  }
+
+  .legendLevel {
+    fill: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    &.dark {
+      fill: #ddd;
+    }
+  }
+}
