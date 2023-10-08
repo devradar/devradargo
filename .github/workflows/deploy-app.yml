@@ -30,8 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build app
-        env:
-          PUBLIC_URL: devradar.github.io/devradargo
         run: npm run build
       - name: Fix permissions
         run: |
