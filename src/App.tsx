@@ -25,8 +25,9 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to={`/`} className="nav-link" role="button">Home</NavLink>
-              <NavLink to={`radar`} className="nav-link" role="button">Radar</NavLink>
+              <NavLink to="/" className="nav-link" role="button">Home</NavLink>
+              <NavLink to="radar" className="nav-link" role="button">Radar</NavLink>
+              <NavLink to="skills" className="nav-link" role="button">Skills</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
