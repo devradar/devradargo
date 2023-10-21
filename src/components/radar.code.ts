@@ -1,4 +1,4 @@
-import { Blip, BlipChange } from '@/types/domain'
+import { Skill, SkillChange } from '@/types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 
@@ -17,7 +17,7 @@ export interface SkillradarOptions {
 }
 
 export interface SkillradarData {
-  items: Blip[];
+  items: Skill[];
   levels: string[];
   categories: string[];
 }
@@ -32,7 +32,7 @@ export interface CoordCarthesian {
   y: number;
 }
 
-export interface BlipExtended extends Blip {
+export interface BlipExtended extends Skill {
   detailsUrl?: string;
 }
 
@@ -168,7 +168,7 @@ export class SkillradarChart {
 
         const sortedChanges = blip.changes
           .sort((a, b) => a.date < b.date ? 1 : -1)
-        const lastChange = sortedChanges[0] as BlipChange
+        const lastChange = sortedChanges[0] as SkillChange
         const newLevel = lastChange.newLevel
         let prevLevel = null
         if (sortedChanges.length > 1) {
@@ -290,12 +290,12 @@ export class SkillradarChart {
     })
   }
 
-  public drawLegend(id: string, data: SkillradarData, filterFn: (b: Blip) => boolean, direction: string): void {
+  public drawLegend(id: string, data: SkillradarData, filterFn: (b: Skill) => boolean, direction: string): void {
     const cfg = this.config
     const darkClass = cfg.dark ? 'dark' : ''
     const blips = data.items
       .filter(filterFn)
-      .sort((a: Blip, b: Blip) => {
+      .sort((a: Skill, b: Skill) => {
         if (a.category === b.category) {
           return a.title > b.title ? 1 : -1
         }
@@ -304,7 +304,7 @@ export class SkillradarChart {
         }
         return a.category - b.category
       })
-    const categories = blips.map((b: Blip) => b.category)
+    const categories = blips.map((b: Skill) => b.category)
     const categoriesDistinct = categories.reduce((p: number[], c: number) => {
       if (!p.includes(c)) {
         p.push(c)
@@ -342,7 +342,7 @@ export class SkillradarChart {
       .attr('href', (d: BlipExtended) => d.detailsUrl || '')
       .append('g')
       .attr('data-title', (d: BlipExtended) => d.title)
-      .attr('data-index', (d: BlipExtended) => d.index)
+      .attr('data-index', (d: BlipExtended) => d.index || 0)
       .attr('class', (d: BlipExtended) => `legendEntry category-${d.category} level-${d.level} ${darkClass}`)
       .on('mouseover', function () {
         const { index } = d3.select(this).data()[0] as BlipExtended
@@ -406,7 +406,7 @@ export class SkillradarChart {
         return legendYoffset(categoryNumber, i + 1)
       })
       .attr('x', 1 * legendTitleCharHeight)
-      .text((d: BlipExtended) => d.index + 1)
+      .text((d: BlipExtended) => (d.index || 0) + 1)
 
     legendWrapper
       .append('text')
@@ -428,7 +428,7 @@ export class SkillradarChart {
       .attr('y', (d: number, i: number) => {
         // figure out how many entries have been printed "above" this category heading
         const previousEntries = blips
-          .filter((b: Blip) => {
+          .filter((b: Skill) => {
             if (direction === 'up') {
               return b.category > d
             }
@@ -440,7 +440,7 @@ export class SkillradarChart {
       .text((d: number) => data.categories[d])
   }
 
-  public blip2rad(blip: Blip): CoordPolar {
+  public blip2rad(blip: Skill): CoordPolar {
     const categoryCount = 4
     let width: number
     if (blip.level === this.config.levelCount - 1) {
@@ -449,7 +449,7 @@ export class SkillradarChart {
       width = this.level2radius(blip.level) - this.level2radius(blip.level + 1)
     }
     const radialSegment = 2 * Math.PI / categoryCount
-    const pseudoString = blip.title.repeat(parseInt(blip.id)) // increase entropy to quick-fix https://github.com/devradar/devradar/issues/16
+    const pseudoString = blip.title.repeat(parseInt(blip.id || '')) // increase entropy to quick-fix https://github.com/devradar/devradar/issues/16
     return {
       angle: -blip.category * radialSegment + Math.PI / 4 + (getPseudoRand(pseudoString) - 0.5) * radialSegment * 0.9,
       radius: this.level2radius(blip.level) - width / 2 - (Math.sqrt(getPseudoRand(pseudoString)) - 0.5) * width / 2 * 0.9

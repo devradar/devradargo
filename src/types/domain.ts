@@ -1,19 +1,19 @@
-export interface BlipChange {
+export interface SkillChange {
   date: string;
   newLevel: number;
   text: string;
   id: string;
 }
 
-export interface Blip {
+export interface Skill {
   title: string;
   category: number;
-  changes: BlipChange[];
+  changes: SkillChange[];
   link: string;
-  id: string;
+  id?: string;
   description: string;
   level: number;
-  index: number;
+  index?: number;
 }
 
 export interface Meta {

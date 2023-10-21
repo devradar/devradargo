@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { SkillradarChart, SkillradarOptions, SkillradarData } from './radar.code'
 import './radar.scss'
-import { Blip } from '@/types/domain'
+import { Skill } from '@/types/domain'
 
 const radarConfig: SkillradarOptions = {
   levelCount: 4,
@@ -9,7 +9,7 @@ const radarConfig: SkillradarOptions = {
   dark: false
 }
 
-const entries: Blip[] = [
+const entries: Skill[] = [
   {
     title: "react",
     category: 3,
