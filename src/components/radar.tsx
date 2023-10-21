@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { SkillradarChart, SkillradarOptions, SkillradarData } from './radar.code'
 import './radar.scss'
 import entries from '../data/skills'
-import { Skill } from '@/types/domain'
 
 const radarConfig: SkillradarOptions = {
   levelCount: 4,
