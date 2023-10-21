@@ -14,6 +14,7 @@ export interface Skill {
   description: string;
   level: number;
   index?: number;
+  [key: string]: any;
 }
 
 export interface Meta {
