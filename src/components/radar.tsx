@@ -24,7 +24,6 @@ function Radar() {
   })
   return (
     <div id="radar" className="radarcontainer">
-      📡
       <div id="radarchart"></div>
     </div>);
 }

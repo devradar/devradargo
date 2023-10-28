@@ -1,42 +1,53 @@
-import React from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import skills from '../data/skills';
 import { Skill } from '../types/domain';
+import Grid from '@mui/material/Grid';
+
 
 interface SkillCardProps {
   skill: Skill;
 }
+const skillProperties = ['level', 'url', 'description']
+const categories = ['Tools', 'Techniques', 'Platforms', 'Frameworks']
 
-const SkillCard = (props: SkillCardProps) => {
-  const skillProperties = ['category', 'level', 'url', 'description']
+export default function SkillCard(props: SkillCardProps) {
   return (
-    <Card bg="light" style={{ width: '18rem' }}>
-      <Card.Header>{props.skill.title}</Card.Header>
-      <Card.Body>
-        <Card.Text>
-          <ul>
-            {skillProperties.map((key, index) => (
-              <li key={index}><b>{key}</b>: {props.skill[key]}</li>
-            ))}
-          </ul>
-        </Card.Text>
-      </Card.Body>
+    <Card sx={{ minWidth: 275 }}>
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          {categories[props.skill.category]}
+        </Typography>
+        <Typography variant="h5" component="div">
+          {props.skill.title}
+        </Typography>
+        <Typography color="text.secondary">
+          {skillProperties.map((key, index) => (
+            <div key={index}><b>{key}</b>: {props.skill[key]}</div>
+          ))}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Show More</Button>
+      </CardActions>
     </Card>
   );
-};
+}
 
 const Skills = () => {
   return (
-    <Container className="d-flex justify-content-center">
-      <Row>
-        {skills.map((skill, index) => (
-          <Col>
-            <SkillCard skill={skill} />
-          </Col>
-        ))
-        }
-      </Row>
-    </Container>
+    <Grid container spacing={2}>
+      {skills.map((skill, index) => (
+        <Grid item xs={4}>
+          <SkillCard skill={skill} />
+        </Grid>
+      ))
+      }
+
+    </Grid>
   );
 };
 

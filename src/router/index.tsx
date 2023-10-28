@@ -19,7 +19,7 @@ export const router = createHashRouter([
       {
         path: "/",
         element: <Home />,
-      },
+      }
     ],
   },
 ]);

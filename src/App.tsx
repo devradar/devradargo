@@ -1,41 +1,25 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Outlet, NavLink } from "react-router-dom";
-import logo from './logo.svg';
-import './App.scss'
+import { Outlet } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import NavBar from './NavBar'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+const defaultTheme = createTheme();
 
 function App() {
   return (
-    <div>
-      <Navbar expand="lg" bg="primary" data-bs-theme="dark">
-        <Container>
-          <NavLink to={`/`} className="nav-link" role="button">
-            <Navbar.Brand>
-              <img
-                alt=""
-                src={logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-              devradar
-            </Navbar.Brand>
-          </NavLink>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink to="/" className="nav-link" role="button">Home</NavLink>
-              <NavLink to="radar" className="nav-link" role="button">Radar</NavLink>
-              <NavLink to="skills" className="nav-link" role="button">Skills</NavLink>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <div id="content">
-        <Outlet />
-      </div>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <div>
+        <NavBar />
+        <div id="content" style={{ padding: '2em' }}>
+          <Outlet />
+        </div>
+      </div >
+    </ThemeProvider>
   );
 }
 
