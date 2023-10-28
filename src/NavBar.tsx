@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import RadarIcon from '@mui/icons-material/Radar';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const pages = ['/', 'radar', 'skills']
 function pageToTitle(page: string) {
@@ -71,11 +71,9 @@ function NavBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} component={NavLink} to={page}>
                   <Typography textAlign="center">
-                    <NavLink to={page} className="nav-link" role="button">
-                      {pageToTitle(page)}
-                    </NavLink>
+                    {pageToTitle(page)}
                   </Typography>
                 </MenuItem>
               ))}
@@ -93,8 +91,9 @@ function NavBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <NavLink to={page} className="nav-link" role="button">{pageToTitle(page)}</NavLink>
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}
+                component={NavLink} to={page}>
+                {pageToTitle(page)}
               </Button>
             ))}
           </Box>
