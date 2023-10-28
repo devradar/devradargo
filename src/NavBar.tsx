@@ -12,7 +12,15 @@ import MenuItem from '@mui/material/MenuItem';
 import RadarIcon from '@mui/icons-material/Radar';
 import { NavLink } from "react-router-dom";
 
-const pages = ['home', 'radar', 'skills']
+const pages = ['/', 'radar', 'skills']
+function pageToTitle(page: string) {
+  if (page === '/') {
+    return 'home'
+  }
+  else {
+    return page
+  }
+}
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -66,7 +74,7 @@ function NavBar() {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <NavLink to={page} className="nav-link" role="button">
-                      {page}
+                      {pageToTitle(page)}
                     </NavLink>
                   </Typography>
                 </MenuItem>
@@ -86,7 +94,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <NavLink to={page} className="nav-link" role="button">{page}</NavLink>
+                <NavLink to={page} className="nav-link" role="button">{pageToTitle(page)}</NavLink>
               </Button>
             ))}
           </Box>
