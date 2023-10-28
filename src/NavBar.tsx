@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import RadarIcon from '@mui/icons-material/Radar';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const pages = ['/', 'radar', 'skills']
 function pageToTitle(page: string) {
