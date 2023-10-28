@@ -12,6 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import RadarIcon from '@mui/icons-material/Radar';
 import { NavLink } from "react-router-dom";
 
+const pages = ['home', 'radar', 'skills']
+
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
@@ -60,16 +62,15 @@ function NavBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              <MenuItem key="home" onClick={handleCloseNavMenu}>
-                <NavLink to={`/`} className="nav-link" role="button">
-                  <Typography textAlign="center">Home</Typography>
-                </NavLink>
-              </MenuItem>
-              <MenuItem key="radar" onClick={handleCloseNavMenu}>
-                <NavLink to={`radar`} className="nav-link" role="button">
-                  <Typography textAlign="center">Radar</Typography>
-                </NavLink>
-              </MenuItem>
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <NavLink to={page} className="nav-link" role="button">
+                      {page}
+                    </NavLink>
+                  </Typography>
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
           <RadarIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -83,12 +84,11 @@ function NavBar() {
             devradar
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button key="home" onClick={handleCloseNavMenu}>
-              <NavLink to={`/`} className="nav-link" role="button">Home</NavLink>
-            </Button>
-            <Button key="radar" onClick={handleCloseNavMenu}>
-              <NavLink to={`radar`} className="nav-link" role="button">Radar</NavLink>
-            </Button>
+            {pages.map((page) => (
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                <NavLink to={page} className="nav-link" role="button">{page}</NavLink>
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </Container>
