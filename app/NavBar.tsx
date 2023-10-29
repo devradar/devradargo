@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,7 +11,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import RadarIcon from '@mui/icons-material/Radar';
-import { NavLink } from "react-router-dom";
+import Link from 'next/link'
 
 const pages = ['/', 'radar', 'skills']
 function pageToTitle(page: string) {
@@ -22,15 +23,15 @@ function pageToTitle(page: string) {
   }
 }
 
-function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+export default function NavBar() {
+  const [menuVisible, setMenuVisible] = React.useState(false);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+    setMenuVisible(true);
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setMenuVisible(false);
   };
 
   const logoStyle = {
@@ -62,18 +63,18 @@ function NavBar() {
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
               keepMounted
-              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-              open={Boolean(anchorElNav)}
+              open={menuVisible}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} component={NavLink} to={page}>
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    {pageToTitle(page)}
+                    <Link href={page}>
+                      {pageToTitle(page)}
+                    </Link>
                   </Typography>
                 </MenuItem>
               ))}
@@ -84,7 +85,7 @@ function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={logoStyle}
           >
             devradar
@@ -92,7 +93,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}
-                component={NavLink} to={page}>
+                href={page}>
                 {pageToTitle(page)}
               </Button>
             ))}
@@ -102,4 +103,3 @@ function NavBar() {
     </AppBar >
   );
 }
-export default NavBar;
