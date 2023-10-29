@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
+"use client"
+import { useLayoutEffect } from 'react'
 import { SkillradarChart, SkillradarOptions, SkillradarData } from './radar.code'
 import './radar.scss'
 import entries from '../data/skills'
 import React from 'react'
+import RadarChart from './radar'
 
 const radarConfig: SkillradarOptions = {
   levelCount: 4,
@@ -19,15 +21,17 @@ const data: SkillradarData = {
 function Radar() {
 
 
-  useEffect(() => {
-    const chart = new SkillradarChart(radarConfig)
-    chart.drawChart('#radarchart', data)
+  const chart = new SkillradarChart(radarConfig)
+  useLayoutEffect(() => {
+    // chart.drawChart('#radarchart', data)
   })
   return (
     <div id="radar" className="radarcontainer">
-      <div id="radarchart"></div>
-    </div>);
+      <div id="radarchart">
+        < RadarChart />
+      </div>
+    </div>)
 }
 
 
-export default Radar;
+export default Radar

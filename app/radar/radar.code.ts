@@ -3,37 +3,37 @@ import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 
 export interface SkillradarOptions {
-  levelCount: number;
-  radius: number;
-  dark: boolean;
-  blipRadius?: number;
-  blipRadiusHoverPercentage?: number;
-  opacityArea?: number;
-  transitionDurationMs?: number;
-  titleCutOff?: number;
-  legendCategorySpacingEms?: number;
-  legendCategoryOffsetEms?: number;
-  tooltipWidth?: number;
+  levelCount: number
+  radius: number
+  dark: boolean
+  blipRadius?: number
+  blipRadiusHoverPercentage?: number
+  opacityArea?: number
+  transitionDurationMs?: number
+  titleCutOff?: number
+  legendCategorySpacingEms?: number
+  legendCategoryOffsetEms?: number
+  tooltipWidth?: number
 }
 
 export interface SkillradarData {
-  items: Skill[];
-  levels: string[];
-  categories: string[];
+  items: Skill[]
+  levels: string[]
+  categories: string[]
 }
 
 export interface CoordPolar {
-  angle: number;
-  radius: number;
+  angle: number
+  radius: number
 }
 
 export interface CoordCarthesian {
-  x: number;
-  y: number;
+  x: number
+  y: number
 }
 
 export interface BlipExtended extends Skill {
-  detailsUrl?: string;
+  detailsUrl?: string
 }
 
 // wrap (existing) text within a svg <text> element by adding <tspan> attributes once maxLength is reached
