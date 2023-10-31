@@ -1,9 +1,8 @@
-"use client"
-import { useLayoutEffect } from 'react'
-import { SkillradarChart, SkillradarOptions, SkillradarData } from './radar.code'
+'use client'
+import React, { useLayoutEffect } from 'react'
+import { SkillradarChart, type SkillradarOptions, type SkillradarData } from './radar.code'
 import './radar.scss'
 import entries from '../data/skills'
-import React from 'react'
 import RadarChart from './radar'
 
 const radarConfig: SkillradarOptions = {
@@ -18,9 +17,7 @@ const data: SkillradarData = {
   categories: ['Tools', 'Techniques', 'Platforms', 'Frameworks']
 }
 
-function Radar() {
-
-
+function Radar () {
   const chart = new SkillradarChart(radarConfig)
   useLayoutEffect(() => {
     // chart.drawChart('#radarchart', data)
@@ -32,6 +29,5 @@ function Radar() {
       </div>
     </div>)
 }
-
 
 export default Radar

@@ -1,9 +1,8 @@
-import skills from '../data/skills';
-import Grid from '@mui/material/Grid';
+import skills from '../data/skills'
+import Grid from '@mui/material/Grid'
 import SkillCard from '../../components/SkillCard'
 
-
-export default function Skills() {
+export default function Skills () {
   return (
     <Grid container spacing={2}>
       {skills.map((skill, index) => (
@@ -14,6 +13,5 @@ export default function Skills() {
       }
 
     </Grid>
-  );
+  )
 };
-

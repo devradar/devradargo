@@ -1,4 +1,4 @@
-import { Skill, SkillChange } from 'types/domain'
+import { type Skill, type SkillChange } from 'types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 
@@ -37,18 +37,18 @@ export interface BlipExtended extends Skill {
 }
 
 // wrap (existing) text within a svg <text> element by adding <tspan> attributes once maxLength is reached
-function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
+function textWrap (textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
   textElm.each(function () {
     const elm = d3.select(this)
     const rootX = elm.attr('x')
     const rootY = elm.attr('y')
-    const words = (elm.text() || "").split(/\s+/).reverse()
+    const words = (elm.text() || '').split(/\s+/).reverse()
     const lineHeight = 1.1
     elm
       .append('tspan')
       .attr('x', rootX)
       .attr('y', rootY)
-    let line: Array<string> = []
+    let line: string[] = []
     let lineNumber = 0
     let tspan = elm.append('tspan') as any
     let word = words.pop()
@@ -71,7 +71,7 @@ function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, an
 export class SkillradarChart {
   public config: SkillradarOptions
 
-  public constructor(options: SkillradarOptions) {
+  public constructor (options: SkillradarOptions) {
     this.config = {
       levelCount: 0,
       radius: 300,
@@ -96,7 +96,7 @@ export class SkillradarChart {
     }
   }
 
-  public drawChart(id: string, data: SkillradarData): void {
+  public drawChart (id: string, data: SkillradarData): void {
     const cfg = this.config
     cfg.levelCount = data.levels.length
 
@@ -106,7 +106,7 @@ export class SkillradarChart {
     const g = d3.select(id)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', `-5 -5 ${2 * cfg.radius! + 10} ${2 * cfg.radius! + 10}`)
+      .attr('viewBox', `-5 -5 ${2 * cfg.radius + 10} ${2 * cfg.radius + 10}`)
       .attr('class', `radar-chart ${darkClass}`)
       .style('overflow', 'visible')
       .append('g')
@@ -203,7 +203,7 @@ export class SkillradarChart {
         isOverBlip = false
       })
 
-    function deactivateTooltip() {
+    function deactivateTooltip () {
       if (isOverBlip || isOverTooltip) {
         return
       }
@@ -290,7 +290,7 @@ export class SkillradarChart {
     })
   }
 
-  public drawLegend(id: string, data: SkillradarData, filterFn: (b: Skill) => boolean, direction: string): void {
+  public drawLegend (id: string, data: SkillradarData, filterFn: (b: Skill) => boolean, direction: string): void {
     const cfg = this.config
     const darkClass = cfg.dark ? 'dark' : ''
     const blips = data.items
@@ -440,7 +440,7 @@ export class SkillradarChart {
       .text((d: number) => data.categories[d])
   }
 
-  public blip2rad(blip: Skill): CoordPolar {
+  public blip2rad (blip: Skill): CoordPolar {
     const categoryCount = 4
     let width: number
     if (blip.level === this.config.levelCount - 1) {
@@ -456,14 +456,14 @@ export class SkillradarChart {
     }
   }
 
-  public rad2xy({ angle, radius }: CoordPolar): CoordCarthesian {
+  public rad2xy ({ angle, radius }: CoordPolar): CoordCarthesian {
     return {
       x: radius * Math.cos(angle),
       y: -radius * Math.sin(angle)
     }
   }
 
-  private level2radius(level: number): number {
+  private level2radius (level: number): number {
     const levelCount = this.config.levelCount || 5
     const radius = this.config.radius
     const innerFactor = 1.3
@@ -472,7 +472,7 @@ export class SkillradarChart {
     return radius / levelCount * (levelCount - level) * factor
   }
 
-  private limitString(str: string, length: number): string {
+  private limitString (str: string, length: number): string {
     if (str.length > length) {
       return str.slice(0, length - 2) + '..'
     }

@@ -1,4 +1,4 @@
-import { Skill, SkillChange } from 'types/domain'
+import { type Skill, SkillChange } from 'types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 import React from 'react'
@@ -38,18 +38,18 @@ export interface BlipExtended extends Skill {
 }
 
 // wrap (existing) text within a svg <text> element by adding <tspan> attributes once maxLength is reached
-function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
+function textWrap (textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
   textElm.each(function () {
     const elm = d3.select(this)
     const rootX = elm.attr('x')
     const rootY = elm.attr('y')
-    const words = (elm.text() || "").split(/\s+/).reverse()
+    const words = (elm.text() || '').split(/\s+/).reverse()
     const lineHeight = 1.1
     elm
       .append('tspan')
       .attr('x', rootX)
       .attr('y', rootY)
-    let line: Array<string> = []
+    let line: string[] = []
     let lineNumber = 0
     let tspan = elm.append('tspan') as any
     let word = words.pop()
@@ -70,7 +70,7 @@ function textWrap(textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, an
   })
 }
 
-export default function RadarChart({
+export default function RadarChart ({
   levelCount = 4,
   radius = 300
 }) {

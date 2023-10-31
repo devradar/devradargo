@@ -11,11 +11,10 @@
 	// make npm faster https://code.visualstudio.com/remote/advancedcontainers/improve-performance#_use-a-targeted-named-volume
 	"remoteUser": "node",
 	"mounts": [
-		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/src/web/node_modules,type=volume"
+		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "sudo chown node node_modules && npm install",
-	"postStartCommand": "npm run start",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		3000

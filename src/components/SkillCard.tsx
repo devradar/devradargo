@@ -3,7 +3,7 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import { Skill } from '../types/domain'
+import { type Skill } from '../types/domain'
 
 interface SkillCardProps {
   skill: Skill
@@ -11,9 +11,7 @@ interface SkillCardProps {
 const skillProperties = ['level', 'url', 'description']
 const categories = ['Tools', 'Techniques', 'Platforms', 'Frameworks']
 
-export default function SkillCard(props: SkillCardProps) {
-  console.log("wee")
-  console.log(props)
+export default function SkillCard (props: SkillCardProps) {
   const s = props.skill
   return (
     <Card sx={{ minWidth: 275 }}>
@@ -26,7 +24,7 @@ export default function SkillCard(props: SkillCardProps) {
         </Typography>
         <Typography color="text.secondary">
           {skillProperties.map((key, index) => (
-            <div key={index}><b>{key}</b>: {s[key]}</div>
+            <div key={key}><b>{key}</b>: {s[key]}</div>
           ))}
         </Typography>
       </CardContent>

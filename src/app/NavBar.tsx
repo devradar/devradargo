@@ -1,38 +1,37 @@
-"use client"
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import RadarIcon from '@mui/icons-material/Radar';
+'use client'
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
+import Container from '@mui/material/Container'
+import Button from '@mui/material/Button'
+import MenuItem from '@mui/material/MenuItem'
+import RadarIcon from '@mui/icons-material/Radar'
 import Link from 'next/link'
 
 const pages = ['/', 'radar', 'skills']
-function pageToTitle(page: string) {
+function pageToTitle (page: string) {
   if (page === '/') {
     return 'home'
-  }
-  else {
+  } else {
     return page
   }
 }
 
-export default function NavBar() {
-  const [menuVisible, setMenuVisible] = React.useState(false);
+export default function NavBar () {
+  const [menuVisible, setMenuVisible] = React.useState(false)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setMenuVisible(true);
-  };
+    setMenuVisible(true)
+  }
 
   const handleCloseNavMenu = () => {
-    setMenuVisible(false);
-  };
+    setMenuVisible(false)
+  }
 
   const logoStyle = {
     mr: 2,
@@ -42,9 +41,8 @@ export default function NavBar() {
     fontWeight: 700,
     letterSpacing: '.3rem',
     color: 'inherit',
-    textDecoration: 'none',
+    textDecoration: 'none'
   }
-
 
   return (
     <AppBar position="static">
@@ -101,5 +99,5 @@ export default function NavBar() {
         </Toolbar>
       </Container>
     </AppBar >
-  );
+  )
 }
