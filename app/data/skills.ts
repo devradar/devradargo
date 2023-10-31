@@ -1,4 +1,4 @@
-import { Skill } from "../types/domain";
+import { Skill } from "../../types/domain"
 
 const entries: Skill[] = [
   {

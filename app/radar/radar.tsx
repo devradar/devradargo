@@ -1,4 +1,4 @@
-import { Skill, SkillChange } from '@/types/domain'
+import { Skill, SkillChange } from 'types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 import React from 'react'
