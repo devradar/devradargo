@@ -11,7 +11,7 @@ interface SkillCardProps {
 const skillProperties = ['level', 'url', 'description']
 const categories = ['Tools', 'Techniques', 'Platforms', 'Frameworks']
 
-export default function SkillCard (props: SkillCardProps) {
+export default function SkillCard (props: SkillCardProps): JSX.Element {
   const s = props.skill
   return (
     <Card sx={{ minWidth: 275 }}>

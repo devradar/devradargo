@@ -10,7 +10,7 @@ import React from 'react'
 
 const defaultTheme = createTheme()
 
-function App () {
+function App (): JSX.Element {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />

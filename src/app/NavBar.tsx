@@ -14,7 +14,7 @@ import RadarIcon from '@mui/icons-material/Radar'
 import Link from 'next/link'
 
 const pages = ['/', 'radar', 'skills']
-function pageToTitle (page: string) {
+function pageToTitle (page: string): string {
   if (page === '/') {
     return 'home'
   } else {
@@ -22,14 +22,14 @@ function pageToTitle (page: string) {
   }
 }
 
-export default function NavBar () {
+export default function NavBar (): JSX.Element {
   const [menuVisible, setMenuVisible] = React.useState(false)
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>): void => {
     setMenuVisible(true)
   }
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (): void => {
     setMenuVisible(false)
   }
 

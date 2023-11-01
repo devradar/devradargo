@@ -17,7 +17,7 @@ const data: SkillradarData = {
   categories: ['Tools', 'Techniques', 'Platforms', 'Frameworks']
 }
 
-function Radar () {
+function Radar (): JSX.Element {
   const chart = new SkillradarChart(radarConfig)
   useLayoutEffect(() => {
     // chart.drawChart('#radarchart', data)

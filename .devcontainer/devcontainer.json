@@ -6,12 +6,12 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:20-bullseye",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/go:1": {}
+		// "ghcr.io/devcontainers/features/go:1": {}
 	},
 	// make npm faster https://code.visualstudio.com/remote/advancedcontainers/improve-performance#_use-a-targeted-named-volume
 	"remoteUser": "node",
 	"mounts": [
-		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+		// "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "sudo chown node node_modules && npm install",
