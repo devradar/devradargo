@@ -19,6 +19,14 @@
 	"forwardPorts": [
 		3000
 	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
 	// Configure tool-specific properties.
 	// "customizations": {},
 }
