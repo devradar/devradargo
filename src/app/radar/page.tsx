@@ -7,7 +7,7 @@ import RadarChart from './radar'
 
 const radarConfig: SkillradarOptions = {
   levelCount: 4,
-  radius: 300,
+  radius: 200,
   dark: false
 }
 

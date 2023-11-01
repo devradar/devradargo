@@ -33,12 +33,12 @@ export default function RadarChart (
           <circle className="gridCircle" r={radius * 0.6}></circle>
           <circle className="gridCircle" r={radius * 0.35}></circle>
           <text className="gridLabel label-0 " textAnchor="middle" x="4"
-            y="-300" dy="1.5em">Novice</text>
-          <text className="gridLabel label-1 " textAnchor="middle" x="4" y="-241.875"
+            y={-radius} dy="1.5em">Novice</text>
+          <text className="gridLabel label-1 " textAnchor="middle" x="4" y={-radius * 0.8}
             dy="1.5em">Intermediate</text>
-          <text className="gridLabel label-2 " textAnchor="middle" x="4" y="-172.5"
+          <text className="gridLabel label-2 " textAnchor="middle" x="4" y={-radius * 0.6}
             dy="1.5em">Advanced</text>
-          <text className="gridLabel label-3 " textAnchor="middle" x="4" y="-91.875"
+          <text className="gridLabel label-3 " textAnchor="middle" x="4" y={-radius * 0.35}
             dy="1.5em">Veteran</text>
         </g><a href="">
           <g className="blip " data-index="-1" transform="translate(-187.75124940043557,-187.75124940043548)">

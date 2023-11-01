@@ -1,4 +1,5 @@
-import { type Skill, type SkillChange } from 'types/domain'
+/* eslint-disable */
+import { type Skill, type SkillChange } from '@/types/domain'
 import * as d3 from 'd3'
 import { getPseudoRand } from '../util'
 
