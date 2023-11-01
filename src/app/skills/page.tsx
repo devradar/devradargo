@@ -6,12 +6,10 @@ export default function Skills (): JSX.Element {
   return (
     <Grid container spacing={2}>
       {skills.map((skill, index) => (
-        <Grid item xs={4}>
-          <SkillCard skill={skill} />
+        <Grid item xs={4} key={index}>
+          <SkillCard key={index} skill={skill} />
         </Grid>
-      ))
-      }
-
+      ))}
     </Grid>
   )
-};
+}

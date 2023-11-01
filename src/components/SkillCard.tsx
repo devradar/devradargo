@@ -22,11 +22,11 @@ export default function SkillCard (props: SkillCardProps): JSX.Element {
         <Typography variant="h5" component="div">
           {s.title}
         </Typography>
-        <Typography color="text.secondary">
           {skillProperties.map((key, index) => (
-            <div key={key}><b>{key}</b>: {s[key]}</div>
-          ))}
+        <Typography key={key} color="text.secondary">
+            <b>{key}</b>: {s[key]}
         </Typography>
+          ))}
       </CardContent>
       <CardActions>
         <Button size="small">Show More</Button>

@@ -35,7 +35,7 @@
   "include": [
     "src",
     ".next/types/**/*.ts",
-    "pages/_document.js"
+    "src/pages/_document.js"
   ],
   "exclude": [
     "node_modules"
