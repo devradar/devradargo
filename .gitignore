@@ -11,6 +11,7 @@ coverage/
 # production
 build/
 .next/
+dist/
 
 # misc
 .DS_Store
