@@ -1,6 +1,6 @@
 'use client'
-import React, { useLayoutEffect } from 'react'
-import { SkillradarChart, type SkillradarOptions, type SkillradarData } from './radar.code'
+import React from 'react'
+import { type SkillradarOptions, type SkillradarData } from './radar.code'
 import './radar.scss'
 import entries from '../data/skills'
 import RadarChart from './radar'
@@ -18,14 +18,10 @@ const data: SkillradarData = {
 }
 
 function Radar (): JSX.Element {
-  const chart = new SkillradarChart(radarConfig)
-  useLayoutEffect(() => {
-    // chart.drawChart('#radarchart', data)
-  })
   return (
     <div id="radar" className="radarcontainer">
       <div id="radarchart">
-        < RadarChart />
+        < RadarChart data={data} config={radarConfig} />
       </div>
     </div>)
 }

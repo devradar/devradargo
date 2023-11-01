@@ -1,27 +1,6 @@
-import { type Skill, SkillChange } from 'types/domain'
-import * as d3 from 'd3'
-import { getPseudoRand } from '../util'
+import { type Skill } from '@/types/domain'
+import { type SkillradarOptions, type SkillradarData } from './radar.code'
 import React from 'react'
-
-export interface SkillradarOptions {
-  levelCount: number
-  radius: number
-  dark: boolean
-  blipRadius?: number
-  blipRadiusHoverPercentage?: number
-  opacityArea?: number
-  transitionDurationMs?: number
-  titleCutOff?: number
-  legendCategorySpacingEms?: number
-  legendCategoryOffsetEms?: number
-  tooltipWidth?: number
-}
-
-export interface SkillradarData {
-  items: Skill[]
-  levels: string[]
-  categories: string[]
-}
 
 export interface CoordPolar {
   angle: number
@@ -37,43 +16,12 @@ export interface BlipExtended extends Skill {
   detailsUrl?: string
 }
 
-// wrap (existing) text within a svg <text> element by adding <tspan> attributes once maxLength is reached
-function textWrap (textElm: d3.Selection<SVGTextElement, unknown, HTMLElement, any>, maxLength: number) {
-  textElm.each(function () {
-    const elm = d3.select(this)
-    const rootX = elm.attr('x')
-    const rootY = elm.attr('y')
-    const words = (elm.text() || '').split(/\s+/).reverse()
-    const lineHeight = 1.1
-    elm
-      .append('tspan')
-      .attr('x', rootX)
-      .attr('y', rootY)
-    let line: string[] = []
-    let lineNumber = 0
-    let tspan = elm.append('tspan') as any
-    let word = words.pop()
-    while (word) {
-      line.push(word)
-      tspan.text(line.join(' '))
-      if ((tspan?.node() as SVGTSpanElement).getComputedTextLength() > maxLength) {
-        const lastWord = line.pop() as string // remove last element from line
-        tspan.text(line.join(' '))
-        line = [lastWord]
-        tspan = textElm.append('tspan')
-          .attr('x', rootX)
-          .attr('y', rootY)
-          .attr('dy', ++lineNumber * lineHeight + 'em')
-      }
-      word = words.pop()
-    }
-  })
-}
+export default function RadarChart (
+  { data, config }:
+  { data: SkillradarData, config: SkillradarOptions }
+): JSX.Element {
+  const radius = config.radius
 
-export default function RadarChart ({
-  levelCount = 4,
-  radius = 300
-}) {
   return (
     <svg preserveAspectRatio="xMinYMin meet" viewBox="-5 -5 610 610" className="radar-chart " style={{
       overflow: 'visible'
@@ -103,12 +51,6 @@ export default function RadarChart ({
               className="blipIndex " textAnchor="middle" dy="0.3em" opacity="1">3</text>
           </g>
         </a>
-        <g visibility="hidden" className="tooltip " opacity="0">
-          <rect className="tooltipRectangle " height="320" width="320" anchor="start"></rect><text className="tooltipTitle "
-            textAnchor="start" y="20" x="14" width="288"></text><text className="tooltipDate " textAnchor="start" y="42"
-              x="14" width="192"></text><text className="tooltipLevel " textAnchor="end" y="42" x="300"
-                width="128"></text><text className="tooltipText " textAnchor="start" y="70" x="14" width="256"></text>
-        </g>
       </g>
     </svg>
   )
