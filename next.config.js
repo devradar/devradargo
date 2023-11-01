@@ -4,7 +4,8 @@
 
 const nextConfig = {
   output: 'export',
-  distDir: 'dist'
+  distDir: 'dist',
+  basePath: '/devradargo'
 }
 
 module.exports = nextConfig
