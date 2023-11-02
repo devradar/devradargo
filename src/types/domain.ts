@@ -1,41 +1,41 @@
 export interface SkillChange {
-  date: string;
-  newLevel: number;
-  text: string;
-  id: string;
+  date: string
+  newLevel: number
+  text: string
+  id: string
 }
 
 export interface Skill {
-  title: string;
-  category: number;
-  changes: SkillChange[];
-  link: string;
-  id?: string;
-  description: string;
-  level: number;
-  index?: number;
-  [key: string]: any;
+  title: string
+  category: number
+  changes: SkillChange[]
+  link: string
+  id?: string
+  description: string
+  level: number
+  index?: number
+  [key: string]: any
 }
 
 export interface Meta {
-  title: string;
-  categories: string[];
-  levels: string[];
+  title: string
+  categories: string[]
+  levels: string[]
 }
 
 export interface UserRole {
-  admin?: boolean;
-  editor?: boolean;
-  viewer?: boolean;
+  admin?: boolean
+  editor?: boolean
+  viewer?: boolean
 }
 export interface User {
-  uid: string;
-  lastLogin: string;
-  name: string;
-  radar: string;
-  id?: string;
-  displayName?: string;
-  roles?: UserRole;
+  uid: string
+  lastLogin: string
+  name: string
+  radar: string
+  id?: string
+  displayName?: string
+  roles?: UserRole
 }
 
 export enum LoginState {

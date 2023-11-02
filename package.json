@@ -17,20 +17,20 @@
     "@types/react-dom": "^18.2.7",
     "@types/uuid": "^9.0.2",
     "d3": "^7.8.5",
+    "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
-    "react-scripts": "5.0.1",
     "sass": "^1.64.2",
-    "typescript": "^4.9.5",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "next lint",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +52,18 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/d3": "^7.4.0"
+    "@next/eslint-plugin-next": "^14.0.1",
+    "@types/d3": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-standard": "^5.0.0",
+    "typescript": "^5.2.2"
   }
 }
