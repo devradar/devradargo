@@ -1,11 +1,11 @@
-name: 🚚 Deploy
+name: 🚚 Preview
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, edited, synchronize, reopen]
 
 concurrency:
-  group: ${{ github.workflow }}-"prod"
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
@@ -13,8 +13,8 @@ jobs:
     name: 🚚 Deploy to Vercel ▲
     runs-on: ubuntu-latest
     environment:
-      name: prod
-      url: ${{ steps.vercel.outputs.preview-url}}
+      name: preview
+      url: https://pr${{ github.event.pull_request.number }}.preview.devradar.io
     steps:
       - uses: actions/checkout@v3
       - uses: amondnet/vercel-action@v20
@@ -23,4 +23,4 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: "--prod"
+          alias-domains: pr${{ github.event.pull_request.number }}.preview.devradar.io
