@@ -17,7 +17,6 @@ concurrency:
 jobs:
   vercel:
     name: 🚚 Deploy to Vercel ▲
-    needs: [build]
     runs-on: ubuntu-latest
     # if: github.ref == 'refs/heads/main'
     environment:
