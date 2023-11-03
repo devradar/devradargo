@@ -1,7 +1,8 @@
 name: 🚚 Preview
 
 on:
-  pull_request: [opened, edited, synchronize, reopen]
+  pull_request:
+    types: [opened, edited, synchronize, reopen]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}

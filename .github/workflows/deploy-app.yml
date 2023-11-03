@@ -2,7 +2,7 @@ name: 🚚 Deploy
 
 on:
   push:
-    branches: #[main]
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-"prod"
