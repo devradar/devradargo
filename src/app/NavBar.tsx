@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import RadarIcon from '@mui/icons-material/Radar'
 import Link from 'next/link'
 
-const pages = ['/', 'radar', 'skills']
+const pages = ['/', 'radar', 'skills', 'chart']
 function pageToTitle (page: string): string {
   if (page === '/') {
     return 'home'
