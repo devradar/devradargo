@@ -45,7 +45,7 @@ export default function NavBar (): JSX.Element {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color='inherit' elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RadarIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -69,11 +69,9 @@ export default function NavBar (): JSX.Element {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link href={page}>
-                      {pageToTitle(page)}
-                    </Link>
-                  </Typography>
+                  <Link href={page}>
+                    {pageToTitle(page)}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -90,7 +88,7 @@ export default function NavBar (): JSX.Element {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, display: 'block', color: 'primary.main', fontSize: '1.4em', fontWeight: 'lighter' }}
                 href={page}>
                 {pageToTitle(page)}
               </Button>
