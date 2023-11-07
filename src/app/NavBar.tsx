@@ -45,7 +45,7 @@ export default function NavBar (): JSX.Element {
   }
 
   return (
-    <AppBar position="static" color='inherit' elevation={0}>
+    <AppBar position="sticky" color='inherit' elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RadarIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

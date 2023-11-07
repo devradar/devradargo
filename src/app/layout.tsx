@@ -16,7 +16,7 @@ export default function RootLayout (
   { children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <html lang="en">
-      <body>
+      <body style={{ width: '100vw'/* prevent layout from jumping due to scrollbar */ }}>
         <Theme>
         <CssBaseline />
         <div>
