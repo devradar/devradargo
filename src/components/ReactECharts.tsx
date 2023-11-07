@@ -46,6 +46,7 @@ export default function ReactECharts ({
     // Update chart
     if (chartRef.current !== null) {
       const chart = getInstanceByDom(chartRef.current)
+      // @ts-expect-error: no idea how to fix
       chart.setOption(option, settings)
     }
   }, [option, settings, theme]) // Whenever theme changes we need to add option and setting due to it being deleted in cleanup function
