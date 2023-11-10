@@ -1,15 +1,34 @@
-import skills from '../data/skills'
+'use client'
 import Grid from '@mui/material/Grid'
-import SkillCard from '../../components/SkillCard'
+import React, { useState } from 'react'
+import SkillList, { type Data } from './SkillList'
+import SkillDetails from './SkillDetails'
 
-export default function Skills (): JSX.Element {
+export default function Page (): JSX.Element {
+  const [isDetailsVisible, setIsDetailsVisible] = useState(false)
+  const [details, setDetails] = useState<Data | null>(null)
+
+  function openDetails (d: Data): void {
+    setIsDetailsVisible(true)
+    setDetails(d)
+  }
   return (
-    <Grid container spacing={2}>
-      {skills.map((skill, index) => (
-        <Grid item xs={4} key={index}>
-          <SkillCard key={index} skill={skill} />
+    <>
+      <Grid
+        container
+        spacing={2}
+        direction="row"
+        justifyContent="center"
+        alignItems="top"
+      >
+        <Grid item sx={{ flexGrow: 1 }}>
+          Main
+          <SkillList onClick={openDetails}/>
         </Grid>
-      ))}
-    </Grid>
+        {isDetailsVisible && <Grid item xs={7}>
+          <SkillDetails details={details} isVisible={isDetailsVisible} onClose={() => { setIsDetailsVisible(false) }}/>
+        </Grid>}
+      </Grid>
+    </>
   )
 }
