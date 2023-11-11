@@ -1,14 +1,16 @@
 'use client'
 import Grid from '@mui/material/Grid'
 import React, { useState } from 'react'
-import SkillList, { type Data } from './SkillList'
+import SkillList from './SkillList'
 import SkillDetails from './SkillDetails'
+import entries from '@/app/data/skills'
+import { type Skill } from '@/types/domain'
 
 export default function Page (): JSX.Element {
-  const [isDetailsVisible, setIsDetailsVisible] = useState(false)
-  const [details, setDetails] = useState<Data | null>(null)
+  const [isDetailsVisible, setIsDetailsVisible] = useState(true)
+  const [details, setDetails] = useState(entries[0])
 
-  function openDetails (d: Data): void {
+  function openDetails (d: Skill): void {
     setIsDetailsVisible(true)
     setDetails(d)
   }
@@ -23,7 +25,7 @@ export default function Page (): JSX.Element {
       >
         <Grid item sx={{ flexGrow: 1 }}>
           Main
-          <SkillList onClick={openDetails}/>
+          <SkillList skills={entries} onClick={openDetails}/>
         </Grid>
         {isDetailsVisible && <Grid item xs={7}>
           <SkillDetails details={details} isVisible={isDetailsVisible} onClose={() => { setIsDetailsVisible(false) }}/>

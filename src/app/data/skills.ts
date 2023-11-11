@@ -1,50 +1,30 @@
 import { type Skill } from '../../types/domain'
+import data from './skills.json'
 
-const entries: Skill[] = [
-  {
-    title: 'react',
-    category: 3,
-    changes: [{
-      date: '2023-08-01',
-      newLevel: 0,
-      text: 'I made dis',
-      id: '0'
-    }],
-    link: 'https://react.dev',
-    id: '',
-    description: 'fancy web framework',
-    level: 0,
-    index: 0
-  },
-  {
-    title: 'vue.js',
-    category: 3,
-    changes: [{
-      date: '2019-06-01',
-      newLevel: 2,
-      text: 'I made old devradar',
-      id: '0'
-    }],
-    link: 'https://vue.dev',
-    id: '',
-    description: 'another fancy web framework',
-    level: 1,
-    index: 1
-  },
-  {
-    title: 'mermaid.js',
-    category: 0,
-    changes: [{
-      date: '2022-10-01',
-      newLevel: 0,
-      text: 'I use a lot at work',
-      id: '0'
-    }],
-    link: 'https://mermaid.js',
-    id: '',
-    description: 'make fancy diagrams',
-    level: 2,
-    index: 2
-  }]
+const entries: Skill[] = []
+for (const id in data) {
+  // eslint-disable-next-line @typescript-eslint/ban-tslint-comment
+  // tslint:disable-next-line
+  const s = data[id]
+  const skill: Skill = {
+    link: s.link,
+    description: s.description,
+    title: s.title,
+    category: s.category,
+    changes: [],
+    level: -1,
+    id
+  }
+  for (const c of s.changes) {
+    skill.changes.push({
+      date: c.date,
+      newLevel: c.newLevel,
+      text: c.text,
+      id: c.id
+    })
+  }
+  skill.level = s.changes[0].newLevel
+  entries.push(skill)
+}
 
 export default entries

@@ -1,11 +1,11 @@
 'use client'
-import { Fab, List, ListItem, Zoom } from '@mui/material'
+import { IconButton, List, ListItem, Paper } from '@mui/material'
 import React from 'react'
-import { type Data } from './SkillList'
 import CloseIcon from '@mui/icons-material/Close'
+import { type Skill } from '@/types/domain'
 
 interface PageProps {
-  details: Data
+  details: Skill
   isVisible: boolean
   onClose?: () => void
 }
@@ -16,34 +16,28 @@ export default function Component ({
   details
 }: PageProps): JSX.Element {
   return (
-    <>
-      Sub
-      <Zoom
-        in={isVisible}
-        timeout={400}
-        style={{
-          transitionDelay: `${isVisible ? 400 : 0}ms`
+    <Paper
+      elevation={4}
+      square
+      sx={{ clipPath: 'inset(0px 0px 0px -10px)', minHeight: '60vw' }}
+    >
+      <IconButton
+        sx={{
+          // position: 'absolute',
+          top: 10,
+          left: 10
         }}
-        unmountOnExit
+        aria-label="close"
+        color="primary"
+        onClick={onClose}
       >
-        <Fab
-          sx={{
-            position: 'absolute',
-            top: 120,
-            right: 16
-          }}
-          aria-label="close"
-          color="primary"
-          onClick={onClose}
-        >
-          <CloseIcon />
-        </Fab>
-      </Zoom>
+        <CloseIcon />
+      </IconButton>
       <List>
-        <ListItem>name: {details?.name}</ListItem>
-        <ListItem>calories: {details?.calories}</ListItem>
-        <ListItem>fat: {details?.fat}</ListItem>
+        <ListItem>Skill: {details?.title}</ListItem>
+        <ListItem>Description: {details?.description}</ListItem>
+        <ListItem>Category: {details?.category}</ListItem>
       </List>
-    </>
+    </Paper>
   )
 }
