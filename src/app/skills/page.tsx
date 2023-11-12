@@ -7,7 +7,7 @@ import entries from '@/app/data/skills'
 import { type Skill } from '@/types/domain'
 
 export default function Page (): JSX.Element {
-  const [isDetailsVisible, setIsDetailsVisible] = useState(true)
+  const [isDetailsVisible, setIsDetailsVisible] = useState(false)
   const [details, setDetails] = useState(entries[0])
 
   function openDetails (d: Skill): void {
