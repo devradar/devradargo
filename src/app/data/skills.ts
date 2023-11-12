@@ -5,7 +5,7 @@ const entries: Skill[] = []
 for (const id in data) {
   // eslint-disable-next-line @typescript-eslint/ban-tslint-comment
   // tslint:disable-next-line
-  const s = data[id]
+  const s: any = data[id]
   const skill: Skill = {
     link: s.link,
     description: s.description,
