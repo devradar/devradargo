@@ -1,5 +1,5 @@
 'use client'
-import { IconButton, List, ListItem, Paper, Typography } from '@mui/material'
+import { IconButton, List, ListItem, Paper, type SxProps, Typography } from '@mui/material'
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -10,19 +10,25 @@ interface PageProps {
   details: Skill
   isVisible: boolean
   onClose?: () => void
+  sx?: SxProps
 }
 
 export default function Component ({
   isVisible,
   onClose,
-  details
+  details,
+  sx
 }: PageProps): JSX.Element {
+  const style = Object.assign({
+    clipPath: 'inset(0px 0px 0px -10px)',
+    minHeight: '60vw'
+  }, sx)
   const changes = details?.changes?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   return (
     <Paper
       elevation={4}
       square
-      sx={{ clipPath: 'inset(0px 0px 0px -10px)', minHeight: '60vw' }}
+      sx={style}
     >
       <IconButton
         sx={{
@@ -67,9 +73,13 @@ export default function Component ({
                     {change.newLevel}
                   </Typography>
                 )}
-                <Typography>
-                  <ReactMarkdown>{change.text}</ReactMarkdown>
-                </Typography>
+                  <ReactMarkdown
+                    components={{
+                      p: ({ node, ...props }) => <div {...props} />
+                    }}
+                  >
+                    {change.text}
+                  </ReactMarkdown>
               </TimelineContent>
             </TimelineItem>
           )

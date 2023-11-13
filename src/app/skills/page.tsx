@@ -27,8 +27,16 @@ export default function Page (): JSX.Element {
           Main
           <SkillList skills={entries} onClick={openDetails}/>
         </Grid>
-        {isDetailsVisible && <Grid item xs={7}>
-          <SkillDetails details={details} isVisible={isDetailsVisible} onClose={() => { setIsDetailsVisible(false) }}/>
+        {isDetailsVisible && <Grid
+          item
+          xs={7}
+        >
+          <SkillDetails
+            details={details}
+            isVisible={isDetailsVisible}
+            onClose={() => { setIsDetailsVisible(false) }}
+            sx={{ position: 'sticky', top: 0 }}
+          />
         </Grid>}
       </Grid>
     </>
