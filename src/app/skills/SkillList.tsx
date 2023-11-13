@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemText, Badge, Divider, ListItemButton } from '@mui/material'
+import { List, ListItemText, Badge, Divider, ListItemButton } from '@mui/material'
 import { type Skill } from '@/types/domain'
 import React from 'react'
 import { Code, Build, Settings, Storage } from '@mui/icons-material'

@@ -3,8 +3,7 @@ import data from './skills.json'
 
 const entries: Skill[] = []
 for (const id in data) {
-  // eslint-disable-next-line @typescript-eslint/ban-tslint-comment
-  // tslint:disable-next-line
+  // @ts-expect-error This is necessary because the data object is of type any and we need to access its properties without TypeScript complaining
   const s: any = data[id]
   const skill: Skill = {
     link: s.link,

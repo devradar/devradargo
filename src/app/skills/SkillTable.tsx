@@ -65,7 +65,7 @@ const headCells: readonly HeadCell[] = [
 interface EnhancedTableProps {
   onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Skill) => void
   order: Order
-  orderBy: string
+  orderBy: keyof Skill
 }
 
 function EnhancedTableHead (props: EnhancedTableProps): JSX.Element {
@@ -154,7 +154,7 @@ export default function Component ({ onClick, skills }: ListProps): JSX.Element 
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => { handleClick(event, row.id) }}
+                    onClick={(event) => { handleClick(event, row.id ?? '-1') }}
                     tabIndex={-1}
                     key={row.id}
                     sx={{ cursor: 'pointer' }}
