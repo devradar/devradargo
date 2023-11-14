@@ -2,7 +2,7 @@
 import React from 'react'
 import { type SkillradarOptions, type SkillradarData } from './radar.code'
 import './radar.scss'
-import entries from '../data/skills'
+import { entries } from '../data/skills'
 import RadarChart from './radar'
 
 const radarConfig: SkillradarOptions = {

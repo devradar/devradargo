@@ -1,0 +1,670 @@
+{
+  "58lejXZxSe3NW1dsJrTx": {
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "text": "I have a set of extensions I make extensive use of and even written my own theme available on the marketplace.",
+        "id": "6f2762c4-81c0-40cb-b741-d54f1c3f316e"
+      }
+    ],
+    "link": "",
+    "description": "IDE of choice for everything.",
+    "title": "VS Code",
+    "category": 0
+  },
+  "5C8nolAuPwPvWEgq6OXS": {
+    "changes": [
+      {
+        "date": "2018-02",
+        "newLevel": 0,
+        "text": "Some experience using tools like Tensorflow, Keras to implement neural networks for image classification, text generation and image generation using GAN approach. Mostly due to my deeplearning and AI nanodegree in Udacity.",
+        "id": "267005e4-4fd4-4e1b-8d0d-5d5c301a2c7e"
+      }
+    ],
+    "link": "",
+    "description": "",
+    "title": "Deeplearning",
+    "category": 1
+  },
+  "5CuUP8UOcmcPLLGbfy62": {
+    "link": "https://nodejs.org/en/",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 3,
+        "id": "14f183aa-bd5f-4bc9-aeb3-7f0d4561fd46",
+        "text": "I am using node since 2014 and have used it daily since. My main uses are web applications, serverless functions and smaller scripts/tools. I am familiar with latest JS features and event driven programming."
+      },
+      {
+        "date": "2015-03",
+        "newLevel": 1,
+        "text": "In 2015 I started building a larger project with node and also lead an increasing team of developers. Around the time that node started to mature and come around with LTS plans it seemed like a perfect fit to invest more heavily into the language.\n\nI started building larger side projects and familiarize myself with the node ecosystem by building my own (first private) packages.",
+        "id": "24e61411-92fd-469b-80e3-ab54354991a4"
+      },
+      {
+        "date": "2014-06",
+        "newLevel": 0,
+        "text": "My first contact with node was while developing a prototype for a connected vehicle at work.",
+        "id": "ae89180d-6ebc-4c3a-86be-c6149940fb11"
+      }
+    ],
+    "title": "Node.JS",
+    "category": 3,
+    "description": "My go-to language for building solutions on cloud platforms, web solutions (like devradar) or CLIs is currently node due to its huge ecosystem of libraries that makes it super easy to build new things.",
+    "id": "5CuUP8UOcmcPLLGbfy62"
+  },
+  "8PljbC5CVIsDcdzZ2vAB": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-02",
+        "newLevel": 1,
+        "id": "1103aa08-d655-4e56-b655-aee1f906473e",
+        "text": "Through the Udacity Artificial Intelligence program I refreshed my knowledge in data analytics and got introduced to current level of the art tools in the Python ecosystem."
+      },
+      {
+        "date": "2012-08",
+        "newLevel": 1,
+        "text": "One of the main tasks in my job as function developer was to identify patterns in data and explain system behavior in certain situations. My main tool to do this was Matlab with a self-developed framework for data handling, evaluation and visualization. ",
+        "id": "8e64a16e-19e9-4bc0-8f0c-66b7058e15e0"
+      }
+    ],
+    "description": "",
+    "title": "Data Analytics",
+    "category": 1
+  },
+  "ADvZmUmt4I0d7phXaKoB": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "My latest project is [plantbuddy](https://github.com/anoff/plantbuddy) which is actually based on the nodeMCU chip but also programmed using the Arduino IDE.",
+        "id": "f14684d5-88c0-45bb-ba76-b1a002239514"
+      },
+      {
+        "date": "2017-04",
+        "newLevel": 1,
+        "text": "Interested in self driving cars I started building my own based platform named [robby5](https://github.com/anoff/robby5) based on cheap components and a hybrid setup between Arduino and Raspberry Pi for controlling the car autonomously.",
+        "id": "e3fbca58-cf16-4346-9786-6b05fda6dfbc"
+      },
+      {
+        "date": "2010-03",
+        "newLevel": 2,
+        "text": "During my time in university I build several projects in university and in free time with friends with more complex programs. One example was a signal processing application that used a microphone to detect clapping.",
+        "id": "c004ca2d-95d2-429d-a771-ed9c3c2eae23"
+      }
+    ],
+    "description": "I use the Arduino platform for a lot of my side projects and have knowledge in sensor communication and serial protocols.",
+    "title": "Arduino",
+    "category": 2
+  },
+  "BxFbPATg0LeX9hBU1yj5": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-02",
+        "newLevel": 3,
+        "text": "Drawing from previous experience and a wide network of DevOps practicioners I strongly influenced our teams decision regarding team setup, development processes and priority of component development. This meant bridging classic automotive processes to a DevOps mindset.",
+        "id": "1f4b8015-10a7-4a6a-8deb-a950540bec89"
+      },
+      {
+        "date": "2016-11",
+        "newLevel": 2,
+        "text": "Being responsible for a joint development mindset for a team of ~10 developers I often came back to things like [DevOps Topologies](https://web.devopstopologies.com/) to find possible solutions to issues in our working mode. Spanning multiple products and technical skillsets resulted in a more generic view of DevOps practices in general instead of mapping them directly to explicit problems for a given product development.",
+        "id": "0b20e21b-2267-4144-8ab1-ab8c0c60e9c3"
+      },
+      {
+        "date": "2015-08",
+        "newLevel": 1,
+        "text": "Starting development with a PaaS cloud lead to an increased complexity regarding solution architecture (microservices) and deployment models. Rethinking our previous processes brought us back to the DevOps core principles and come up with a set of adapted guidelines.",
+        "id": "5a6b06b9-4be1-47d5-9809-1da5673bb867"
+      },
+      {
+        "date": "2014-11",
+        "newLevel": 0,
+        "text": "Having experienced people consult our project quickly lead to very high standards regarding automation, operational responsibility and deployment patterns in our team.",
+        "id": "41fabfe7-ec3f-443a-83c2-3c30a4138d0d"
+      }
+    ],
+    "description": "I am a strong believer and evangelist of the DevOps mindset and have experience applying those principles in all stages of a product development lifecycle.",
+    "title": "DevOps",
+    "category": 1
+  },
+  "DzWZWKNt8K5TZeNJo8rC": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 0,
+        "text": "Introduced to it shortly in an AI nanodegree I used it in a few occassion for smaller side projects to detect movement in images, basic emotion detection etc.",
+        "id": "1fc66b81-a4a3-482b-bf66-84440ba5d111"
+      }
+    ],
+    "description": "Computer Vision for hobby projects.",
+    "title": "OpenCV",
+    "category": 0
+  },
+  "Gve3ejGqSsW0L2sqyHQv": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2017-08",
+        "newLevel": 0,
+        "text": "I spent some time building a smart contract using truffle for the OpenMined project.",
+        "id": "4f180207-2ee5-4daf-89ec-77a2c478c8e3"
+      }
+    ],
+    "description": "Writing smart contracts and distributed applications.",
+    "title": "Ethereum",
+    "category": 2
+  },
+  "L8pYp9SHVrnKfLcoBFyx": {
+    "link": "http://www.ros.org/",
+    "changes": [
+      {
+        "date": "2018-11",
+        "newLevel": 0,
+        "text": "During a Hackathon in October 2018 within a group of 4 I was in charge of prototyping and developing a control interface for a ROS based humanoid robot arm by Festo. As an interface the ROS web bridge (web sockets) was used. This gave insights into how the framework is structured into topics, services etc as well as first experience in what a good ROS architecture looks like.\n\nBy delivering a working prototype with a valid new use case for the existing product we won the Festo challenge. The source code as well as a demo video can be found on the [R.I.C GitHub repository](https://github.com/anoff/ric)",
+        "id": "c954a6b7-0e61-4c09-ab34-a6989b6f1b01"
+      }
+    ],
+    "description": "Using the [Robot Operating System](https://en.wikipedia.org/wiki/Robot_Operating_System) framework to control complex robots with various kinematic and sensoric interfaces.",
+    "title": "ROS",
+    "category": 3
+  },
+  "LNv6IwYXP84djGSWGnkf": {
+    "link": "",
+    "description": "Building SPA web apps",
+    "title": "Vue",
+    "category": 3,
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "id": "62dc6967-8aab-4594-99eb-5a63783ca2b7",
+        "text": "I built several smaller web UIs using vue in 2018. Got into concepts like vuex and data stores to some extent but never used it in larger codebases."
+      },
+      {
+        "date": "2019-08",
+        "newLevel": 2,
+        "text": "After building multiple web apps in Vue, especially the editor and teams app for #devradar I grow quite familiar with Vue.js. Both in JavaScript and Typescript.",
+        "id": "5540dd9c-240c-4f51-8f6d-14c81089be67"
+      }
+    ],
+    "id": "LNv6IwYXP84djGSWGnkf"
+  },
+  "OAkQXbtK9vgvVSoxgkGC": {
+    "link": "https://www.python.org/",
+    "description": "My main use of python is in the context of datascience and deep learning as well as computer vision. List comprehensions are my favorite 😇",
+    "title": "Python",
+    "category": 3,
+    "id": "OAkQXbtK9vgvVSoxgkGC",
+    "changes": [
+      {
+        "date": "2021-03",
+        "newLevel": 2,
+        "id": "9841ecba-54ff-416d-9b4f-6142729bf35e",
+        "text": "Building several automation scripts working with Microsoft365 API, Web Automation via Selenium. Polishing up my software engineering knowledge in the Python ecosystem with `pydocstyle`, `pyunit`, `pycodestyle` and typing with `mypy` including automation via GitHub Actions. Learned a lot about latest Python 3 features and renewed my Class knowledge."
+      },
+      {
+        "date": "2018-01",
+        "newLevel": 2,
+        "text": "I developed a deeper understanding of the Python language and its patterns through two Udacity nanodegree programs in the field of AI",
+        "id": "d9e25d1a-1ea7-48d7-89ce-57227d23f7c3"
+      },
+      {
+        "date": "2017-01",
+        "newLevel": 1,
+        "text": "Interested in data analytics I started using python and analytics libraries like scikitlearn or numpy to analyze different personal datasets.",
+        "id": "e48ac56c-cb67-47d8-9a0b-2b4f8c71a566"
+      },
+      {
+        "date": "2021-05",
+        "newLevel": 2,
+        "text": "Building and executing a Python Training for newcomers. Due to COVID fully remote with ~20 participants. 8 lessons of 2.5 hours each.",
+        "id": "4e5789dd-c96f-45cf-a27b-19c381550f81"
+      }
+    ]
+  },
+  "OEG7YTfqbOMyRycCZOSb": {
+    "link": "https://golang.org/",
+    "changes": [
+      {
+        "date": "2019-01",
+        "newLevel": 1,
+        "text": "Participating in the #adventOfCode2018 in a joint [social coding project](https://github.com/anoff/aoc-2018) I solved each day using go and [learned more](https://aoc-2018.netlify.com/#_today_i_learned) about the language each day.",
+        "id": "1047ef00-b9c5-4f4f-b01e-82d6feab1867"
+      }
+    ],
+    "description": "Mainly using Go for pet projects in backend space or data handling.",
+    "title": "go",
+    "category": 3
+  },
+  "QaJ3BnWtDjXL4HJ2fRO2": {
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "id": "82814a7d-5172-414f-b575-d96bb491ba04",
+        "text": "Focusing on PaaS and serverless based solutions I have built applications using most of the base services. Large focus on JavaScript based functions and solution architecture."
+      },
+      {
+        "date": "2018-01",
+        "newLevel": 1,
+        "text": "First complete solution architecture for a service on Azure using managed only services.",
+        "id": "0a315cf8-c85f-4fc7-8d72-239641c0267e"
+      },
+      {
+        "date": "2017-06",
+        "newLevel": 0,
+        "text": "First contact with Azure and figuring out how to host a Node.js application. Did a [presentation](https://github.com/anoff/azure-fns-demo) at the Node.js meetup about Azure functions.",
+        "id": "da8f9e3c-1275-4eaf-9b22-d08daf1a5659"
+      }
+    ],
+    "link": "",
+    "description": "Using the Microsoft ☁️ offering in professional and private solutions.",
+    "title": "Azure",
+    "category": 2
+  },
+  "QmN7AleKxQrZJs4h4OBP": {
+    "changes": [
+      {
+        "date": "2019-03",
+        "newLevel": 2,
+        "id": "b9669e02-7601-4c17-b16c-57a86825afa5",
+        "text": "Starting march I introduced AsciiDoc based documentation to a new project for all engineering documents.\nWorking with a lot of diagrams in PlantUML and multi repository builds using Antora site generator."
+      },
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "Deprecated all other documentation tools besides pure markdown early 2018 and evaluating a markdown only approach.",
+        "id": "3acba81b-85e0-4dbf-8abd-8642bf1d9358"
+      }
+    ],
+    "link": "",
+    "description": "Using ascii based documentation methods and keeping all system documentation versioned within git alongside the source code.",
+    "title": "Docs as Code",
+    "category": 1
+  },
+  "RKx8ti2P5tyfdLGsOO0T": {
+    "link": "",
+    "description": "Automate everything that is possible - and reasonable.",
+    "title": "CI/CD",
+    "category": 1,
+    "id": "RKx8ti2P5tyfdLGsOO0T",
+    "changes": [
+      {
+        "date": "2019-08",
+        "newLevel": 3,
+        "text": "Migrating multiple services at work and from my private portfolio across CI services like GitLab, Drone, Travis, Circle CI and Azure Pipelines I am familiar with a wide range of services and best practice patterns how to implement pipelines as code.",
+        "id": "186fe1b8-fe9a-4285-a13f-829280b84a30"
+      },
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "id": "547c26a1-13d9-4494-be77-c824f4a74eb0",
+        "text": "Several years experience implementing automated tests, code analysis and deployment using various platforms."
+      },
+      {
+        "date": "2014-11",
+        "newLevel": 1,
+        "id": "5296fcb4-1dd8-4630-ab92-f20a1b58a69d",
+        "text": "Introducing automated testing and build to a Node.js project using Jenkins."
+      },
+      {
+        "date": "2011-04",
+        "newLevel": 0,
+        "text": "Learning the basics of testing in general. Developing test guidelines, environments and test cases for ECU software. My main goal was already then to automate as much as possible and being able to create reproducable results.",
+        "id": "56ddb258-dccc-45e6-ab89-a07baba29766"
+      },
+      {
+        "date": "2020-02",
+        "newLevel": 3,
+        "id": "93d45838-73d9-4ccc-a23e-3c58bf5c72c8",
+        "text": "Extensively using GitHub Actions for my private & work projects"
+      }
+    ]
+  },
+  "V2IptTR9BnK7wmb9cHh1": {
+    "link": "https://terraform.io",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "text": "Several months working with the Azure provider, building modules, working with remote levels etc.",
+        "id": "8411ae3a-a183-4763-bfd2-e568db7fad8d"
+      },
+      {
+        "date": "2018-03",
+        "newLevel": 1,
+        "id": "f2c92dc2-4326-4166-bb6d-258b32ad88d7",
+        "text": "Using a lot of deployment for Azure functions I created and published my first [Terraform module for Azure functions](https://github.com/anoff/terraform-azurerm-functionapp)"
+      }
+    ],
+    "description": "Use cloud-agnostic syntax to define target infrastructure setups in cloud environments.",
+    "title": "Terraform",
+    "category": 0
+  },
+  "Yz1i97fvTzu3RHVxJMiA": {
+    "changes": [
+      {
+        "date": "2018-11",
+        "newLevel": 2,
+        "id": "f0607bec-1809-4570-aaae-7826237e1a20",
+        "text": "After doing software and solution architecture for several years in multiple domains (ECU, software, cloud solutions) I decided to get an introduction into the _official_ world of software architecture by visiting a 4 day onsite training by the german company Oose that specialices in IT trainings.\nAs expected the training helped me structure my existing tools and approaches towards problem solving by putting individual architectural steps like definition of constraints, system context, component/deployment views into relation with each other and giving me a better idea which stakeholders are responsible to develop the individual artefacts."
+      }
+    ],
+    "link": "",
+    "description": "A structured approach to solving problems.",
+    "title": "Software Architecture",
+    "category": 1
+  },
+  "dPcRr6aHFWhyYyfVtvGY": {
+    "link": "https://www.docker.com/",
+    "changes": [
+      {
+        "date": "2019-03",
+        "newLevel": 2,
+        "text": "Setting up and operating a multi-machine development environment on Azure gave me a lot new insights into using Docker and docker-compose to run applications with minimal bootstrapping of the VM.",
+        "id": "0368678e-0131-457a-92ad-14f23a5633b6"
+      },
+      {
+        "date": "2017-01",
+        "newLevel": 1,
+        "id": "fe382ede-54a4-4311-bdbe-27d7c80f5ec3",
+        "text": "Using Docker heavily to guarantee consistent software behavior across various developer machines as well as production systems. By this time I maintain several Docker images - most based on Node.js."
+      },
+      {
+        "date": "2016-04",
+        "newLevel": 0,
+        "id": "6e21c7b4-9f77-478a-a48b-207b34c73027",
+        "text": "Becoming a Docker _user_ at work, running images provided by others with slight modifications and some custom builds."
+      }
+    ],
+    "description": "Container technology used for running various tools on my local machine without having to install plethora of compilers and drivers.\nAlso used for hosting services on Virtual Machines.",
+    "title": "Docker",
+    "category": 0
+  },
+  "eQoAi2XbBDJJRUQnBgzV": {
+    "link": "https://github.com",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "id": "fb4e98a2-4d4d-4c94-ba8b-766dee2ca8d2",
+        "text": "Starting rather late in the GitHub game I quickly learned how the  platform and its users work together and am now familiar with navigating the projects, hosting my own, contributing to other repositories and community design aspects."
+      },
+      {
+        "date": "2016-04",
+        "newLevel": 0,
+        "text": "In 2016 I published my first private project on GitHub. Before that I hosted a few projects on private BitBucket repositories.",
+        "id": "c2576a8f-c0f3-42ed-8817-47226da3dd7c"
+      }
+    ],
+    "description": "All my private projects are hosted on GitHub.",
+    "title": "GitHub",
+    "category": 2
+  },
+  "geIPT8CxC6fqGV75hwyX": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2017-12",
+        "newLevel": 1,
+        "text": "Switched my default terminal to zsh using [oh-my-zsh](https://github.com/anoff/dotfiles)",
+        "id": "3d2489e3-14de-4ea7-b8b7-0043a1dfe77f"
+      },
+      {
+        "date": "2017-06",
+        "newLevel": 1,
+        "text": "Through increased involvement in defining CI/CD workloads and jobs I had to deepen my knowledge of bash and shell scripting.",
+        "id": "23404a9a-bdf5-4d25-8d15-4031197de7aa"
+      },
+      {
+        "date": "2016-10",
+        "newLevel": 0,
+        "text": "Switching from Windows to MacOS results in a lot more bash usage and even creating custom [dotfiles](https://github.com/anoff/dotfiles)",
+        "id": "122e11c8-6a34-41e1-882b-7356b42238c9"
+      }
+    ],
+    "description": "Writing smaller scripts, grep-ing, sed-ing and piping stdouts around to make sure things work correctly.",
+    "title": "bash",
+    "category": 3
+  },
+  "jNgJmdE3rbYGT36jNLqH": {
+    "changes": [
+      {
+        "date": "2019-02",
+        "newLevel": 2,
+        "id": "b615a6a7-c3ae-40e0-9121-0e33c4965d09",
+        "text": "Moving my blog from [Jekyll](https://jekyllrb.com/) to [Hugo](https://gohugo.io/) I learned more about customizing static site builds and gained experience in another generator technology."
+      },
+      {
+        "date": "2018-04",
+        "newLevel": 1,
+        "text": "Starting my own blog I dug deeper into the workings of Jekyll and hosting possibilities in the Open Source space.",
+        "id": "5f060a21-92f0-479d-998f-ea3461780d8b"
+      },
+      {
+        "date": "2017-03",
+        "newLevel": 0,
+        "text": "I set up the initial version of my personal website [anoff.io](//anoff.io) using Jekyll hosted via GitHub pages.",
+        "id": "ebe9c62b-9a6f-427c-83fe-b8c2bb07766b"
+      }
+    ],
+    "link": "https://www.staticgen.com/",
+    "description": "Instead of using complex CMS tools or handcrafted websites I rely on markup languages and generated sites for my personal websites/blogs. This also fits my _git everything_ approach as I can keep all my content (sources) on GitHub.",
+    "title": "Static Site Generators",
+    "category": 1
+  },
+  "jyAUncrtpPRAeckNCoos": {
+    "link": "https://www.sphinx-doc.org/",
+    "changes": [
+      {
+        "date": "2021-08",
+        "newLevel": 0,
+        "id": "b87635c1-3726-4b8c-8980-b74eafe71c90",
+        "text": "Using Sphinx for documenting one enduser program and one developer-oriented Python library.\nCustom content provided via `.rst` and code documentation using Google-style pydocstrings"
+      }
+    ],
+    "description": "Creating documentation for my Python programs by leveraging auto-generation from pydocstyles.\nMostly as hosted HTML on GitHub pages.",
+    "title": "Sphinx",
+    "id": "054ed5ee-e68a-4ada-8ee4-cf492e6c2e17",
+    "category": 0
+  },
+  "lgd7Nt9hafX0F1LYeRTc": {
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 0,
+        "text": "My only experience with K8s is working on Azures AKS offering. Most of the things I have done so far are only in the proof of concept area. I am familiar with some parts of the ecosystem like using kubectl or helm charts",
+        "id": "e9889609-bfee-4e0f-98a5-5c6bbdbd31e5"
+      }
+    ],
+    "link": "",
+    "description": "Hosting docker solutions in (managed) Kubernetes environments.",
+    "title": "Kubernetes",
+    "category": 2
+  },
+  "m1Q1NAKiMUOnlrxBClEI": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "Haven't used it in a long time but still know when to use it and what patterns should be obeyed when writing Matlab functions.",
+        "id": "562683d5-6e53-4850-89b7-8140fe67fb68"
+      },
+      {
+        "date": "2014-08",
+        "newLevel": 3,
+        "text": "Using Matlab for several years in my daily professional life I am very experienced and know how to build functions, libraries and scripts for various use cases.",
+        "id": "cecdb646-8555-4dd7-b900-8a86b2fc6199"
+      }
+    ],
+    "description": "Several years experience building frameworks and GUI applications in Matlab for data handling, manipulation, simulation, analysis etc.\nLots of experience with making graphs and interactive visualizations.",
+    "title": "Matlab",
+    "category": 0
+  },
+  "muBviMPsYmG7p4vVFu9Z": {
+    "changes": [
+      {
+        "date": "2018-04",
+        "newLevel": 0,
+        "text": "During a demo conference I build my first [3D demo](https://github.com/anoff/demo-one) written in C++ without the usage of any 3D libraries.",
+        "id": "fec97c37-87e8-49b5-82f8-82de3fdf8ed1"
+      }
+    ],
+    "link": "",
+    "description": "Mostly use C/C++ in the context of microcontrollers. No extensive professional experience so far.",
+    "title": "c++",
+    "category": 3
+  },
+  "ogvdYuFzPyALU2kIdfbr": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "Using firebase & firestore for several of my private projects I a familiar with implementing secure access rules for firestore, oauth providers and hosting static content on firebase. Some experience with developing functions.",
+        "id": "02786308-4334-4c59-a867-4a3fc733713e"
+      },
+      {
+        "date": "2017-04",
+        "newLevel": 0,
+        "id": "3b581c9b-70ae-41e5-94ba-6afaf7b220d8",
+        "text": "During a hackathon I built my [first project](https://github.com/anoff/microllaborators) using firebase as a serverless backend for web applications."
+      }
+    ],
+    "description": "Building serverless webapps.",
+    "title": "Google Firebase",
+    "category": 2
+  },
+  "peCqH7Gg66g9ED8TaGLf": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2017-11",
+        "newLevel": 2,
+        "text": "After several months of developing applications in a microservice approach for a cloudfoundry runtime I was quite familiar with the environment and optimized my local toolset to be able to work efficiently with cloudfoundry.",
+        "id": "c8017217-a705-481a-8ddf-63d8d1cd929b"
+      },
+      {
+        "date": "2015-07",
+        "newLevel": 0,
+        "text": "My first contact with Cloudfoundry. I was in charge of designing a solution on top of Cloudfoundry and come up with a Microservice architecture derived from business requirements.",
+        "id": "c785c68f-256b-43bd-86ba-e3604bd52bb5"
+      }
+    ],
+    "description": "Hosting 12 factor applications",
+    "title": "Cloudfoundry",
+    "category": 2
+  },
+  "raKw14XHGj5E07rQMUig": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 3,
+        "text": "Heavy user of plantuml to help in creating, discussing and documenting various concepts.",
+        "id": "61dfbca0-49fc-42a1-a3db-93abc1ce3608"
+      }
+    ],
+    "description": "Creating diagrams to visualize data flow, architecture or use case patterns.",
+    "title": "PlantUML",
+    "category": 0
+  },
+  "tETrt22yrzHM4fxmaEaO": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "Used extensively during my Udacity courses in 2017-2018 I got a good understanding of what the Jupyter platform is capable of and which use cases it can cover.",
+        "id": "3ae9228e-3f4f-44cf-a75a-11197cf54dc7"
+      }
+    ],
+    "description": "Playground for python and AI that can also be directly rendered in GitHub.",
+    "title": "Jupyter",
+    "category": 0
+  },
+  "tdzwRA8TviFgeNBztIeo": {
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 2,
+        "text": "I am experienced in building Javascript based serverless functions.",
+        "id": "ac4cc965-6913-495b-9834-9184b66fc589"
+      },
+      {
+        "date": "2017-06",
+        "newLevel": 0,
+        "id": "c095aa68-318b-46a9-ad16-77239b2e362d",
+        "text": "Building a [tiny serverless app](https://github.com/anoff/cryptobooks) in the context of cryptocurrencies."
+      }
+    ],
+    "link": "",
+    "description": "Micro-workloads and simple applications. Also anything CRON triggered.",
+    "title": "Azure Functions",
+    "category": 2
+  },
+  "uZYSH64wcgrDYu8PEWT9": {
+    "changes": [
+      {
+        "date": "2019-06",
+        "newLevel": 1,
+        "text": "For devradar.io I built a heavily customized theme and got a look into the underlying concepts of types, categories and how the rendering takes place.",
+        "id": "5f08d7b3-68f8-4cce-bca8-fc234a866e43"
+      }
+    ],
+    "link": "",
+    "description": "Static site generator for various projects. Using it with markdown and asciidoc content.",
+    "title": "Hugo",
+    "category": 0
+  },
+  "uku3YJbVdfAzHxWmrPyH": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2019-06",
+        "newLevel": 2,
+        "id": "efa6ad18-dc1e-4cbf-9109-75c74d2e3a53",
+        "text": "Building devradar.io and trying to get a consistent branding across multiple web platforms taught me a lot about css and HTML."
+      }
+    ],
+    "description": "Building websites was never something I particularly enjoyed but it is the most versatile UI a developer can use for it's software.",
+    "title": "Web Design",
+    "category": 1
+  },
+  "vLttVemMSKmIEZoqnOar": {
+    "link": "",
+    "changes": [
+      {
+        "date": "2018-08",
+        "newLevel": 1,
+        "text": "Several months of experience building terraform recipes and automation using CLI commands for Azure services.",
+        "id": "bcb951ed-1e29-4b70-a0a1-d7a8980b0697"
+      }
+    ],
+    "description": "Extending my fondness for automation from CI/CD to bringing infrastructure automation also into CI pipelines.",
+    "title": "Infrastructure as Code",
+    "category": 1
+  },
+  "x3u78nHUAmA5JxFCeYdv": {
+    "link": "https://anoff.io",
+    "description": "Draw icons and logos for my private projects. Create stickers every now and then for our team.",
+    "title": "Affinity Designer",
+    "id": "x3u78nHUAmA5JxFCeYdv",
+    "category": 0,
+    "changes": [
+      {
+        "date": "2018-04",
+        "newLevel": 0,
+        "text": "Creating icons for several open source projects and designing stickers for personal use.",
+        "id": "595b6ea7-1c9e-419d-b1ea-dab0d5539abb"
+      }
+    ]
+  }
+}

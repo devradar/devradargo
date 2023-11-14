@@ -6,6 +6,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import React from 'react'
 import Theme from './Theme'
+import { Box } from '@mui/material'
 
 export const metadata = {
   title: 'devradar | manage your skills',
@@ -17,14 +18,12 @@ export default function RootLayout (
   return (
     <html lang="en">
       <body style={{ width: '100vw'/* prevent layout from jumping due to scrollbar */ }}>
-        <Theme>
         <CssBaseline />
-        <div>
+        <Theme>
           <NavBar />
-          <div style={{ margin: '2em' }}>
+          <Box component="main" sx={{ p: 3, marginTop: '4vw' }}>
             {children}
-          </div>
-        </div >
+          </Box>
         </Theme>
       </body>
     </html >
