@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 import React, { useState } from 'react'
 import SkillList from './SkillList'
 import SkillDetails from './SkillDetails'
-import entries from '@/app/data/skills'
+import { entries, meta as skillMeta } from '@/app/data/skills'
 import { type Skill } from '@/types/domain'
 
 export default function Page (): JSX.Element {
@@ -34,6 +34,7 @@ export default function Page (): JSX.Element {
           <SkillDetails
             details={details}
             isVisible={isDetailsVisible}
+            meta={skillMeta}
             onClose={() => { setIsDetailsVisible(false) }}
             sx={{ position: 'sticky', top: 0 }}
           />

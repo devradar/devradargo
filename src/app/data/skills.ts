@@ -1,7 +1,7 @@
-import { type Skill } from '../../types/domain'
+import { type Meta, type Skill } from '../../types/domain'
 import data from './skills.json'
 
-const entries: Skill[] = []
+export const entries: Skill[] = []
 for (const id in data) {
   // @ts-expect-error This is necessary because the data object is of type any and we need to access its properties without TypeScript complaining
   const s: any = data[id]
@@ -26,4 +26,8 @@ for (const id in data) {
   entries.push(skill)
 }
 
-export default entries
+export const meta: Meta = {
+  title: 'anoff\'s developer skills',
+  levels: ['Novice', 'Intermediate', 'Advanced', 'Veteran'],
+  categories: ['Tools', 'Techniques', 'Platforms', 'Frameworks']
+}
